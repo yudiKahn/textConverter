@@ -1,0 +1,30 @@
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\appsettings.Development.json
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\appsettings.json
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Text Convertor.staticwebassets.runtime.json
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Text Convertor.exe
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Text Convertor.deps.json
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Text Convertor.runtimeconfig.json
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Text Convertor.dll
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\ref\Text Convertor.dll
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Text Convertor.pdb
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.GlobalUsings.g.cs
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.csproj.AssemblyReference.cache
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.AssemblyInfoInputs.cache
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.AssemblyInfo.cs
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.csproj.CoreCompileInputs.cache
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.RazorAssemblyInfo.cache
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.RazorAssemblyInfo.cs
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\staticwebassets.build.json
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\staticwebassets.development.json
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\scopedcss\bundle\Text Convertor.styles.css
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\scopedcss\projectbundle\Text Convertor.bundle.scp.css
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.dll
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\ref\Text Convertor.dll
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.pdb
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.genruntimeconfig.cache
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Class Library.dll
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Class Library.pdb
+D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.csproj.CopyComplete

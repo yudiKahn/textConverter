@@ -1,0 +1,19 @@
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Tester.exe
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Tester.deps.json
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Tester.runtimeconfig.json
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Tester.dll
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\ref\Tester.dll
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Tester.pdb
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Class Library.dll
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Class Library.pdb
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.GlobalUsings.g.cs
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.csproj.AssemblyReference.cache
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.AssemblyInfoInputs.cache
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.AssemblyInfo.cs
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.csproj.CoreCompileInputs.cache
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.dll
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\ref\Tester.dll
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.pdb
+D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.genruntimeconfig.cache
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Newtonsoft.Json.dll

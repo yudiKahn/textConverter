@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5cfdcafb-0f31-46fd-b6c4-c9be60c6eb0d": {
+      "ProjectGuid": "5cfdcafb-0f31-46fd-b6c4-c9be60c6eb0d",
+      "DisplayName": "Text Convertor",
+      "ColorIndex": 0
+    },
+    "dfdb0ae2-a23f-46f2-8aaa-d19814394437": {
+      "ProjectGuid": "dfdb0ae2-a23f-46f2-8aaa-d19814394437",
+      "DisplayName": "UTest",
+      "ColorIndex": 1
+    },
+    "22507f95-18d5-4008-b372-f7dabe4ec349": {
+      "ProjectGuid": "22507f95-18d5-4008-b372-f7dabe4ec349",
+      "DisplayName": "Class Library",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "132b7131-16bb-4497-84f7-571f870e8f37": {
+      "ProjectGuid": "132b7131-16bb-4497-84f7-571f870e8f37",
+      "DisplayName": "Tester",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

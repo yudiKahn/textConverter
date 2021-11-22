@@ -1,0 +1,26 @@
+{
+  "name": "dani",
+  "todos": [
+    "make coffee",
+    "run",
+    "learn c#",
+    "new todo",
+    {
+      "isDone": false,
+      "todo": "be happy"
+    },
+    [
+      "tt todos",
+      { "a": "b" },
+      [ "a" ],
+      "a"
+    ]
+  ],
+  "address": {
+    "street": "david",
+    "city": "zefat",
+    "zip": 123
+  },
+  "oldAddress": {},
+  "is cool": true
+}

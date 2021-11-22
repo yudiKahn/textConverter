@@ -1,0 +1,5 @@
+1. xml -> json
+2. comments parsing
+3. testing efficiency vs newton.soft.json
+4. csv -> nodeTree
+5. using reflection to build class from nodeTree

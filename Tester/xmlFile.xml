@@ -1,0 +1,21 @@
+﻿<person>
+	<name>
+		dani
+	</name>
+	<age>
+		23
+	</age>
+	<is18>
+		false
+	</is18>
+	<todos>
+		<todo>
+			make coffee
+		</todo>
+	</todos>
+	<address>
+		<street>
+			david
+		</street>
+	</address>
+</person>
