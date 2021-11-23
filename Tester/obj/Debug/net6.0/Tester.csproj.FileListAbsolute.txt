@@ -17,3 +17,5 @@ D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\ref\Tester.dll
 D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.pdb
 D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\Tester.genruntimeconfig.cache
 D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\PerformanceCompare.dll
+D:\Projects\Text Convertor\Tester\bin\Debug\net6.0\PerformanceCompare.pdb

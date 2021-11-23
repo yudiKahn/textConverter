@@ -20,6 +20,16 @@
         "runtime": {
           "bin/placeholder/Class Library.dll": {}
         }
+      },
+      "PerformanceCompare/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PerformanceCompare.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PerformanceCompare.dll": {}
+        }
       }
     }
   },
@@ -55,12 +65,18 @@
       "type": "project",
       "path": "../Class Library/Class Library.csproj",
       "msbuildProject": "../Class Library/Class Library.csproj"
+    },
+    "PerformanceCompare/1.0.0": {
+      "type": "project",
+      "path": "../PerformanceCompare/PerformanceCompare.csproj",
+      "msbuildProject": "../PerformanceCompare/PerformanceCompare.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Class Library >= 1.0.0",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "PerformanceCompare >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -92,6 +108,9 @@
           "projectReferences": {
             "D:\\Projects\\Text Convertor\\Class Library\\Class Library.csproj": {
               "projectPath": "D:\\Projects\\Text Convertor\\Class Library\\Class Library.csproj"
+            },
+            "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj": {
+              "projectPath": "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj"
             }
           }
         }

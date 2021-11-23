@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Class Library\Class Library.csproj" />
+    <ProjectReference Include="..\PerformanceCompare\PerformanceCompare.csproj" />
   </ItemGroup>
 
 </Project>
