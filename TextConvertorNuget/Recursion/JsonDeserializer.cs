@@ -146,11 +146,9 @@ namespace TextConvertorNuget.Recursion
             }
         }
 
-        public string Trim(string original)
-        {
-            var ignore = new Regex("( |[\r\n]+)");
-            return ignore.Replace(original, string.Empty);
-        }
+        public string Trim(string input) => 
+            Regex.Replace(Regex.Replace(input, @"(\\r|\\n|\\t)", " "), @"\s(?=(?:""[^""]*""|[^""])*$)", string.Empty);
+
         public static bool IsTagMatch(char open, char close) => (open == '[' && close == ']') || (open == '{' && close == '}');
     }
 }

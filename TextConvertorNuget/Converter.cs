@@ -44,9 +44,22 @@ namespace TextConvertorNuget
         }
         private Func<string, string> Convert(IDeserializer deserializer, ISerializer serializer) => (input) =>
         {
-            _logger.Information("Starting to convert...");
-            var nodes = deserializer.Deserialize(input);
-            return serializer.Serialize(nodes);
+            try
+            {
+                _logger.Information("Starting the process of parsing...");
+                var nodes = deserializer.Deserialize(input);
+
+                _logger.Information("Starting the process of converting...");
+                string res = serializer.Serialize(nodes);
+
+                _logger.Information("Finished successfully !!!");
+                return res;
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e.Message);
+                throw;
+            }
         };
     }
 }

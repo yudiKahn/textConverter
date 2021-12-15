@@ -630,15 +630,6 @@
           }
         }
       },
-      "Serilog/2.10.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/Serilog.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Serilog.dll": {}
-        }
-      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1703,19 +1694,6 @@
         },
         "runtime": {
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "Class Library/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "bin/placeholder/Class Library.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Class Library.dll": {}
         }
       }
     }
@@ -3040,30 +3018,6 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
-      ]
-    },
-    "Serilog/2.10.0": {
-      "sha512": "+QX0hmf37a0/OZLxM3wL7V6/ADvC1XihXN4Kq/p6d8lCPfgkRdiuhbWlMaFjR9Av0dy5F0+MBeDmDdRZN/YwQA==",
-      "type": "package",
-      "path": "serilog/2.10.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net45/Serilog.dll",
-        "lib/net45/Serilog.xml",
-        "lib/net46/Serilog.dll",
-        "lib/net46/Serilog.xml",
-        "lib/netstandard1.0/Serilog.dll",
-        "lib/netstandard1.0/Serilog.xml",
-        "lib/netstandard1.3/Serilog.dll",
-        "lib/netstandard1.3/Serilog.xml",
-        "lib/netstandard2.0/Serilog.dll",
-        "lib/netstandard2.0/Serilog.xml",
-        "lib/netstandard2.1/Serilog.dll",
-        "lib/netstandard2.1/Serilog.xml",
-        "serilog.2.10.0.nupkg.sha512",
-        "serilog.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -6324,16 +6278,10 @@
         "xunit.extensibility.execution.2.4.1.nupkg.sha512",
         "xunit.extensibility.execution.nuspec"
       ]
-    },
-    "Class Library/1.0.0": {
-      "type": "project",
-      "path": "../Class Library/Class Library.csproj",
-      "msbuildProject": "../Class Library/Class Library.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Class Library >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.7",
       "MSTest.TestFramework >= 2.2.7",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
@@ -6367,11 +6315,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "D:\\Projects\\Text Convertor\\Class Library\\Class Library.csproj": {
-              "projectPath": "D:\\Projects\\Text Convertor\\Class Library\\Class Library.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

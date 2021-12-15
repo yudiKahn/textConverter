@@ -15,8 +15,4 @@
     <PackageReference Include="xunit.extensibility.execution" Version="2.4.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Class Library\Class Library.csproj" />
-  </ItemGroup>
-
 </Project>
