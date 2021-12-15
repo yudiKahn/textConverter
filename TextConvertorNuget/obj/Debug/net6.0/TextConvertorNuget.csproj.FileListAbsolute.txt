@@ -10,3 +10,4 @@ D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuge
 D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.dll
 D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\ref\TextConvertorNuget.dll
 D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.pdb
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.csproj.AssemblyReference.cache

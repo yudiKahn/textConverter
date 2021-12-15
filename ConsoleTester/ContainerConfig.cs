@@ -19,17 +19,17 @@ namespace Tester
         {
             var builder = new ContainerBuilder();
 
-            builder
+           /* builder
                 .RegisterAssemblyTypes(Assembly.Load(nameof(TextConvertorNuget)))
                 .Where(t => t.Namespace.Contains("Recursion"))
                 .As(t => Assembly
                             .Load(nameof(TextConvertorNuget)).DefinedTypes
                             .Where(i => i.Namespace.Contains("Interfaces") && i.Name == "I" + t.Name)
-                );
-            /*builder.RegisterType<Recursion.JsonDeserializer>().As<Interfaces.IJsonDeserializer>();
+                );*/
+            builder.RegisterType<Recursion.JsonDeserializer>().As<Interfaces.IJsonDeserializer>();
             builder.RegisterType<Recursion.JsonSerializer>().As<Interfaces.IJsonSerializer>();
             builder.RegisterType<Recursion.XmlSerializer>().As<Interfaces.IXmlSerializer>();
-            builder.RegisterType<Recursion.XmlDeserializer>().As<Interfaces.IXmlDeserializer>();*/
+            builder.RegisterType<Recursion.XmlDeserializer>().As<Interfaces.IXmlDeserializer>();
 
             builder.RegisterType<Converter>().As<IConverter>();
             builder.RegisterType<ConsoleLogger>().As<ILogger>();

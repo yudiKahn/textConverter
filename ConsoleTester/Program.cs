@@ -17,8 +17,9 @@ namespace Tester
     {
         public static void Main()
         {
+            string JsonStr = File.ReadAllText(path: @"D:\Projects\Text Convertor\ConsoleTester\jsonFile.json", encoding: Encoding.UTF8);
             var converter = Factory.GetOfType<IConverter>();
-            var res = converter[(Format.XML, Format.JSON)](TmpService.XmlStr);
+            var res = converter[(Format.JSON, Format.XML)](JsonStr);
             Console.WriteLine(res);
         }
     }
