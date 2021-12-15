@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class Library", "Class Libr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTest", "UTest\UTest.csproj", "{DFDB0AE2-A23F-46F2-8AAA-D19814394437}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTester", "Tester\ConsoleTester.csproj", "{132B7131-16BB-4497-84F7-571F870E8F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tester", "Tester\Tester.csproj", "{132B7131-16BB-4497-84F7-571F870E8F37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceCompare", "PerformanceCompare\PerformanceCompare.csproj", "{6517C028-434E-465C-97D4-48DAE1997AE0}"
 EndProject
