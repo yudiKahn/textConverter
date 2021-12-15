@@ -102,3 +102,4 @@ D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.dll
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\ref\UTest.dll
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.pdb
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.genruntimeconfig.cache
+D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\Serilog.dll

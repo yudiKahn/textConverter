@@ -25,7 +25,22 @@
       "ProjectGuid": "132b7131-16bb-4497-84f7-571f870e8f37",
       "DisplayName": "Tester",
       "ColorIndex": 3
+    },
+    "6517c028-434e-465c-97d4-48dae1997ae0": {
+      "ProjectGuid": "6517c028-434e-465c-97d4-48dae1997ae0",
+      "DisplayName": "PerformanceCompare",
+      "ColorIndex": 4
+    },
+    "86f3afca-2d7e-4a74-b523-8bf3a68ca997": {
+      "ProjectGuid": "86f3afca-2d7e-4a74-b523-8bf3a68ca997",
+      "DisplayName": "ConvertorLibrary",
+      "ColorIndex": 5
+    },
+    "375a63e1-4a54-474c-8847-043e3a941cfb": {
+      "ProjectGuid": "375a63e1-4a54-474c-8847-043e3a941cfb",
+      "DisplayName": "TextConvertorNuget",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 7
 }

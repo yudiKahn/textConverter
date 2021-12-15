@@ -8,7 +8,7 @@ namespace ClassLibrary
 {
     public class Parser<TFrom, TTo> where TFrom : IDeserializer, new() where TTo : ISerializer, new()
     {
-        public static string RootElement = "__root";
+        //public static string RootElement = "__root";
         private TFrom Deserializer = new TFrom();
         private TTo Serializer = new TTo();
 
@@ -16,8 +16,7 @@ namespace ClassLibrary
         {
             
             var nodesTree = Deserializer.Deserialize(original);
-            Serializer.rootElement = RootElement;
-            return Serializer.Serialize(nodesTree);
+            return Serializer.Serialize(nodesTree.ToArray());
         }
     }
 }

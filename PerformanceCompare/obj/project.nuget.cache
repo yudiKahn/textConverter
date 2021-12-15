@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "7pJOiOJOVnjzqyJg686lvrHeNYH881m0ST+WcDojOKgKW7NXXpryl/V8XNk2kwlO9D+GWJ6MTYAdyzgmelVx+A==",
+  "dgSpecHash": "bfyEvowljlWu2yGMoyP12PEGfYFHEwSF6YiTrg4YTcmJGSfzhLkzN/sQx8GObb6XV54dNpRxBRGETYs3DOFcDA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\97255\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.diagnostics.performancecounter\\6.0.0\\system.diagnostics.performancecounter.6.0.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

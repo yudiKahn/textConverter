@@ -8,6 +8,6 @@ namespace ClassLibrary
 {
     public interface ISerializer
     {
-        string Serialize(NodesTree[] nodes);
+        string Serialize(IEnumerable<NodesTree> nodes);
     }
 }

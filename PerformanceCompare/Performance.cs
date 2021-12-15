@@ -11,12 +11,23 @@ namespace PerformanceCompare
             int method = 1;
             foreach (var action in actions)
             {
-                var ts = new Stopwatch();
-                ts.Start();
-                action();
-                ts.Stop();
-                infos.Add(new Info($"Method {method}", ts.ElapsedMilliseconds.ToString()));
-                method++;
+                try
+                {
+                    var ts = new Stopwatch();
+                    ts.Start();
+                    action();
+                    ts.Stop();
+                    infos.Add(new Info(
+                        name: $"Method {method}",
+                        time: ts.ElapsedMilliseconds.ToString()));
+                }
+                catch
+                {
+                    infos.Add(new Info($"Method {method} crashed", "0"));
+                } finally
+                {
+                    method++;
+                }
             }
             return infos.ToArray();
         }

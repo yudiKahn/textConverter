@@ -10,31 +10,35 @@ namespace ClassLibrary
 {
     public class XmlSerializer : ISerializer
     {
-        public string Serialize(NodesTree[] nodes)
+        public string Serialize(IEnumerable<NodesTree> nodes)
         {
-            string res="";
-            List<NodesTree> opens = new List<NodesTree>();
-            for (int i = 0; i < nodes.Length; i++)
+            string res = "";
+            List<NodesTree> opens = new();
+            int i = 0;
+            int lastX = 0;
+            foreach (NodesTree node in nodes)
             {
-                res += $"<{nodes[i].Key}>";
-                if (IsPrimitiveValue(nodes[i]) || nodes[i].GetNumOfChildren(nodes) == 0) 
-                {
-                    res += $"{((string)nodes[i].Value)}</{nodes[i].Key}>";
-                }
-                else
-                    opens.Add(nodes[i]);
-
-
-                if (i < nodes.Length - 1 && nodes[i].PId != nodes[i+1].PId && nodes[i+1].PId != nodes[i].Id)
+                int numsOfClosingTags = lastX - node.X;
+                for (int j = 0; j < numsOfClosingTags; j++)
                 {
                     res += $"</{opens[opens.Count - 1].Key}>";
                     opens.RemoveAt(opens.Count - 1);
                 }
+                res += $"<{node.Key}>";
+                if (IsPrimitiveValue(node) || node.GetNumOfChildren(nodes) == 0)
+                {
+                    res += $"{((string)node.Value)}</{node.Key}>";
+                }
+                else
+                    opens.Add(node);
 
+
+                lastX = node.X;
+                i++;
             }
-            for(int i = opens.Count-1; i >=0; i--)
+            for (int i2 = opens.Count - 1; i2 >= 0; i2--)
             {
-                res += $"</{opens[i].Key}>";
+                res += $"</{opens[i2].Key}>";
             }
 
             return res;

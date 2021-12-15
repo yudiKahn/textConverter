@@ -3,7 +3,6 @@ D:\Projects\Text Convertor\PerformanceCompare\bin\Debug\net6.0\PerformanceCompar
 D:\Projects\Text Convertor\PerformanceCompare\bin\Debug\net6.0\ref\PerformanceCompare.dll
 D:\Projects\Text Convertor\PerformanceCompare\bin\Debug\net6.0\PerformanceCompare.pdb
 D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.GlobalUsings.g.cs
-D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.csproj.AssemblyReference.cache
 D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.AssemblyInfoInputs.cache
 D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.AssemblyInfo.cs

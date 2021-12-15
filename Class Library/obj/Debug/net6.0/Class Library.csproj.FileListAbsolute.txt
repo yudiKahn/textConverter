@@ -10,4 +10,3 @@ D:\Projects\Text Convertor\Class Library\obj\Debug\net6.0\Class Library.csproj.C
 D:\Projects\Text Convertor\Class Library\obj\Debug\net6.0\Class Library.dll
 D:\Projects\Text Convertor\Class Library\obj\Debug\net6.0\ref\Class Library.dll
 D:\Projects\Text Convertor\Class Library\obj\Debug\net6.0\Class Library.pdb
-D:\Projects\Text Convertor\Class Library\obj\Debug\net6.0\Class Library.csproj.AssemblyReference.cache

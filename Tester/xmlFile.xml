@@ -12,10 +12,17 @@
 		<todo>
 			make coffee
 		</todo>
+		<todo>
+			<name>learn python</name>
+			<isDone>false</isDone>
+		</todo>
 	</todos>
 	<address>
 		<street>
 			david
 		</street>
+		<zip>
+			123
+		</zip>
 	</address>
 </person>

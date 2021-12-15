@@ -10,7 +10,10 @@ namespace PerformanceCompare
     {
         public static void Print(this IEnumerable<Info> _this, Action<string> action)
         {
-            foreach(var info in _this) action(info.ToString());
+            foreach(var info in _this)
+            {
+                action(info.ToString());
+            }
         }
     }
 }

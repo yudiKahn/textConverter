@@ -28,3 +28,4 @@ D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.genrun
 D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Class Library.dll
 D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Class Library.pdb
 D:\Projects\Text Convertor\Text Convertor\obj\Debug\net6.0\Text Convertor.csproj.CopyComplete
+D:\Projects\Text Convertor\Text Convertor\bin\Debug\net6.0\Serilog.dll

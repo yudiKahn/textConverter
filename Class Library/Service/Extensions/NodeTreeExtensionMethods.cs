@@ -9,7 +9,7 @@ namespace ClassLibrary.Service.Extensions
     public static class NodeTreeExtensionMethods
     {
 
-        public static NodesTree[] Sort(this IEnumerable<NodesTree> _this)
+        public static IEnumerable<NodesTree> NodesSort(this IEnumerable<NodesTree> _this)
         {
             var res = _this.ToList();
             Predicate<int> IsParentInTop = (index) =>
@@ -25,7 +25,6 @@ namespace ClassLibrary.Service.Extensions
                 }
                 return flag;
             };
-
             for (int i = 1; i < res.Count; i++)
             {
                 for (int j = i; res[j].PId != res[j-1].PId && IsParentInTop(j); j--)
@@ -35,10 +34,23 @@ namespace ClassLibrary.Service.Extensions
                     res[j - 1] = tmp;
                 }
             }
-            return res.ToArray();
+            return res;
         }
 
-        public static int GetNumOfChildren(this NodesTree _this, NodesTree[] nodes)
+
+        public static void Print(this IEnumerable<NodesTree> _this, Action<string> action)
+        {
+            Func<int, string> func = (n) =>
+            {
+                string res = "";
+                for (int i = 0; i < n; res += " ", i++) ;
+                return res;
+            };
+            foreach (var node in _this)
+                action(func(node.X)+node.ToString());
+        }
+
+        public static int GetNumOfChildren(this NodesTree _this, IEnumerable<NodesTree> nodes)
         {
             int res = 0;
             foreach (var node in nodes)
@@ -48,7 +60,7 @@ namespace ClassLibrary.Service.Extensions
             return res;
         }
 
-        public static NodesTree[] GetChildren(this NodesTree _this, IEnumerable<NodesTree> fromNodes)
+        public static IEnumerable<NodesTree> GetChildren(this NodesTree _this, IEnumerable<NodesTree> fromNodes)
         {
             List<NodesTree> children = new();
             foreach (var n in fromNodes)
@@ -56,7 +68,7 @@ namespace ClassLibrary.Service.Extensions
                 if(n.PId == _this.Id)
                     children.Add(n);
             }
-            return children.ToArray();
+            return children;
         }
     }
 }

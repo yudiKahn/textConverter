@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31808.319
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Text Convertor", "Text Convertor\Text Convertor.csproj", "{5CFDCAFB-0F31-46FD-B6C4-C9BE60C6EB0D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class Library", "Class Library\Class Library.csproj", "{22507F95-18D5-4008-B372-F7DABE4EC349}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTest", "UTest\UTest.csproj", "{DFDB0AE2-A23F-46F2-8AAA-D19814394437}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tester", "Tester\Tester.csproj", "{132B7131-16BB-4497-84F7-571F870E8F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTester", "Tester\ConsoleTester.csproj", "{132B7131-16BB-4497-84F7-571F870E8F37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceCompare", "PerformanceCompare\PerformanceCompare.csproj", "{6517C028-434E-465C-97D4-48DAE1997AE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceCompare", "PerformanceCompare\PerformanceCompare.csproj", "{6517C028-434E-465C-97D4-48DAE1997AE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConvertorNuget", "TextConvertorNuget\TextConvertorNuget.csproj", "{375A63E1-4A54-474C-8847-043E3A941CFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5CFDCAFB-0F31-46FD-B6C4-C9BE60C6EB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CFDCAFB-0F31-46FD-B6C4-C9BE60C6EB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CFDCAFB-0F31-46FD-B6C4-C9BE60C6EB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CFDCAFB-0F31-46FD-B6C4-C9BE60C6EB0D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22507F95-18D5-4008-B372-F7DABE4EC349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22507F95-18D5-4008-B372-F7DABE4EC349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22507F95-18D5-4008-B372-F7DABE4EC349}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{6517C028-434E-465C-97D4-48DAE1997AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6517C028-434E-465C-97D4-48DAE1997AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6517C028-434E-465C-97D4-48DAE1997AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375A63E1-4A54-474C-8847-043E3A941CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375A63E1-4A54-474C-8847-043E3A941CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375A63E1-4A54-474C-8847-043E3A941CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375A63E1-4A54-474C-8847-043E3A941CFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

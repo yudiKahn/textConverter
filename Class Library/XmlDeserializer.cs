@@ -4,99 +4,88 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using ClassLibrary.Service;
 using ClassLibrary.Service.Extensions;
 
 namespace ClassLibrary
 {
     public class XmlDeserializer : IDeserializer
     {
-        public NodesTree[] Deserialize(string original)
+        public IEnumerable<NodesTree> Deserialize(string original)
         {
             original = Trim(original);
-            List<NodesTree> resList = new List<NodesTree>();
-            NodesRecursion(original, (arr) =>
+            List<NodesTree> res = new();
+            NodesRecursion(original, (arr, X, Pid) =>
             {
                 foreach (var kv in arr)
-                    resList.Add(kv);
+                {
+                    kv.X = X;
+                    kv.PId = Pid;
+                    kv.ValueType = XmlHelper.GetValueType((string)kv.Value);
+                    res.Add(kv);
+                }
             });
-            return resList.ToArray().Sort();
+            return res.NodesSort();
         }
 
         public int FindTagCloserIndex(int index, string xml)
         {
-            List<char> tags = new List<char>();
-            for (int i = index+1; i < xml.Length; i++)
+            int res = -1;
+            List<char> tags = new();
+            for (int i = index; i < xml.Length; i++)
             {
-                if (xml[i].IsOpener(Service.Deserializers.Xml) && xml[i + 1] != '/')
+                char c = xml[i];
+                if (XmlHelper.IsOpenTagOpener(xml[i] + xml.ElementAtOrDefault(i + 1).ToString()))
+                {
                     tags.Add(xml[i]);
-                else if(xml[i].IsOpener(Service.Deserializers.Xml) && xml[i+1] == '/')
+                } else if (XmlHelper.IsCloseTagOpener(xml[i] + xml.ElementAtOrDefault(i+1).ToString()))
                 {
-                    if(tags.Count > 0)
-                        tags.RemoveAt(tags.Count - 1);
-                    else
-                    {
-                        for (int i2 = i; i2 < xml.Length; i2++)
-                        {
-                            if (xml[i2].IsCloser(Service.Deserializers.Xml))
-                                return i2;
-                        }
-                    }
-
+                    if (tags.Count == 0) 
+                        return i;
+                    if (tags.Count > 0) tags.RemoveAt(tags.Count-1);
                 }
             }
-            return -1;
+            return res;
         }
 
-        public NodesTree[] GetTopNodes(string xml)
+        public IEnumerable<NodesTree> GetTopNodes(string xml)
         {
-            List<NodesTree> res = new List<NodesTree>();
-            for (int i = 0; i < xml.Length; i++)
+            List<NodesTree> res = new();
+            for(int i=0; i < xml.Length; i++)
             {
-                if (xml[i].IsOpener(Service.Deserializers.Xml) && xml[i+1] != '/') // we are at key
+                char x = xml[i];
+                if (XmlHelper.IsTagCloser(xml[i]))
                 {
-                    int indexOfEndValue = FindTagCloserIndex(i, xml);
-                    int startKey = i, endKey = 0;
-                    for (int k = i; true; k++)
-                    {
-                        if (xml[k] == '>')
-                        {
-                            endKey = k;
-                            break;
-                        }
-                    }
+                    int endKeyI = i, startKeyI = i - 1;
+                    for (; !XmlHelper.IsOpenTagOpener(xml[startKeyI-1] + xml[startKeyI].ToString()); startKeyI--);
+                    int startValI = i + 1, endValI = FindTagCloserIndex(i, xml);
 
-                    string key = xml.Substring(startKey, endKey - startKey+1);
-                    key = new Regex("(<|>)").Replace(key, string.Empty);
-                    string val = xml.Substring(endKey+1, indexOfEndValue - endKey - key.Length);
-                    val = val[0] != '<' ? new Regex("(</|(?<=</).*)").Replace(val,string.Empty) : val;
+                    string key = xml.Substring(startKeyI, endKeyI - startKeyI);
+                    string val = xml.Substring(startValI, endValI - startValI);
+
                     res.Add(new NodesTree(key, val));
-                    i = indexOfEndValue + 1;
+
+                    for (; !XmlHelper.IsTagCloser(xml[endValI]); endValI++) ;
+                    i = endValI;
                 }
             }
-            return res.ToArray();
+            return res;
         }
 
-        public void NodesRecursion(string original, Action<NodesTree[]> forEach, int X = 0, string PId = "0")
+        public void NodesRecursion(string original, Action<IEnumerable<NodesTree>, int, string> forEach, int X = 0, string PId = "0")
         {
-            NodesTree[] tmp = GetTopNodes(original);
+            var tmp = GetTopNodes(original);
+            forEach(tmp, X, PId);
             foreach (var kv in tmp)
             {
-                kv.X = X;
-                kv.PId = PId;
-            }
-            forEach(tmp);
-            foreach (var pair in tmp)
-            {
-                if (((string)pair.Value)[0].IsOpener(Service.Deserializers.Xml))
+                string val = (string)kv.Value;  
+                if(XmlHelper.IsOpenTagOpener(val[0] + val[1].ToString()))
                 {
-                    NodesRecursion((string)pair.Value, forEach, X + 1, pair.Id);
+                    NodesRecursion(val, forEach, X+1, kv.Id);
                 }
             }
         }
 
-        public string Trim(string original)
-        {
-            return new Regex("(\n|\t|\r)").Replace(original, string.Empty);
-        }
+        public string Trim(string original) => new Regex("(\n|\t|\r)").Replace(original, "");
     }
 }

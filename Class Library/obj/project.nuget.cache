@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "75eNd9pSVKLlTZ7GmhapHFmDIw5yubHZmQN2umk9zwN3QU9NPD5z6bwqpYNjFcdisZQbfkznVWAJu7zkNLwo7g==",
+  "dgSpecHash": "eLPHsVsFds0+FKuObMM9xLGQqlEeDBPEtJPQQXHvVFVmmzn7Pzg6oQwICVZsIOjPo8SwfJ/tEwtEhDvSQuHreQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Text Convertor\\Class Library\\Class Library.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\97255\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512"
+  ],
   "logs": []
 }

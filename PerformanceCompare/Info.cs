@@ -10,9 +10,10 @@ namespace PerformanceCompare
     {
         public string Name { get; set; }
         public string Time { get; set; }
-        public Info(string name, string Time)
+        public Info(string name, string time)
         {
-            this.Name = name; this.Time = Time;
+            this.Name = name; 
+            this.Time = time;
         }
         public override string ToString() => $"{Name}\nTime: {Time}ms\n---------";
     }

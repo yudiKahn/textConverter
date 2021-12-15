@@ -1,0 +1,12 @@
+D:\Projects\Text Convertor\TextConvertorNuget\bin\Debug\net6.0\TextConvertorNuget.deps.json
+D:\Projects\Text Convertor\TextConvertorNuget\bin\Debug\net6.0\TextConvertorNuget.dll
+D:\Projects\Text Convertor\TextConvertorNuget\bin\Debug\net6.0\ref\TextConvertorNuget.dll
+D:\Projects\Text Convertor\TextConvertorNuget\bin\Debug\net6.0\TextConvertorNuget.pdb
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.GlobalUsings.g.cs
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.AssemblyInfoInputs.cache
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.AssemblyInfo.cs
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.csproj.CoreCompileInputs.cache
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.dll
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\ref\TextConvertorNuget.dll
+D:\Projects\Text Convertor\TextConvertorNuget\obj\Debug\net6.0\TextConvertorNuget.pdb

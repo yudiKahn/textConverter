@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SrxN0TnqWz7Q8HayaDOcuNMkUarzYh+pg7bMtlgSPamTpn4KqVCq0pEbaeFAYl2cuCA9FbSDvKW0tysPtDgeNg==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\97255\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\serilog.sinks.console\\4.0.1\\serilog.sinks.console.4.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

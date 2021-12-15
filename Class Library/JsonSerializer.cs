@@ -9,36 +9,53 @@ namespace ClassLibrary
 {
     public class JsonSerializer : ISerializer
     {
-        public string Serialize(NodesTree[] nodes)
+        public string Serialize(IEnumerable<NodesTree> nodes)
         {
             string res = "";
-            List<NodesTree> opens = new List<NodesTree>();
-            for (int i = 0; i < nodes.Length; i++)
+            List<NodesTree> opens = new();
+            bool IsInArray = false;
+            int i = 0;
+            int lastX = 0;
+            foreach (NodesTree node in nodes)
             {
-                res += $"{nodes[i].Key}:";
-                if (IsPrimitiveValue(nodes[i]) || nodes[i].GetNumOfChildren(nodes) == 0)
+                int numsOfClosingTags = lastX - node.X;
+                for (int j = 0; j < numsOfClosingTags; j++)
                 {
-                    res += $"{((string)nodes[i].Value)}</{nodes[i].Key}>";
-                }
-                else
-                    opens.Add(nodes[i]);
-
-
-                if (i < nodes.Length - 1 && nodes[i].PId != nodes[i + 1].PId && nodes[i + 1].PId != nodes[i].Id)
-                {
-                    res += $"</{opens[opens.Count - 1].Key}>";
-                    opens.RemoveAt(opens.Count - 1);
+                    if (res[res.Length - 1] == ',')
+                        res = res.Substring(0, res.Length - 1);
+                    res += opens[opens.Count-1].ValueType == NodeValueType.arr ? "]," : "},";
+                    opens.RemoveAt(opens.Count-1);
                 }
 
-            }
-            for (int i = opens.Count - 1; i >= 0; i--)
-            {
-                res += $"</{opens[i].Key}>";
-            }
+                if (!IsInArray)
+                {
+                    res += $"\"{node.Key}\":";
+                }
 
+                if (node.ValueType == NodeValueType.str) res += $"\"{node.Value}\",";
+                else if (node.ValueType == NodeValueType.num || node.ValueType == NodeValueType.bol) res += $"{node.Value},";
+                else if (node.ValueType == NodeValueType.obj)
+                {
+                    res += '{';
+                    opens.Add(node);
+                }
+                else if (node.ValueType == NodeValueType.arr)
+                {
+                    IsInArray = true;
+                    res += '[';
+                    opens.Add(node);
+                }
+
+                lastX = node.X;
+                i++;
+            }
+            foreach (NodesTree node in opens)
+            {
+                if (res[res.Length - 1] == ',')
+                    res = res.Substring(0, res.Length - 1);
+                res += node.ValueType == NodeValueType.arr ? "]" : "}";
+            }
             return res;
         }
-        public bool IsPrimitiveValue(NodesTree node) => node.ValueType != NodeValueType.obj && node.ValueType != NodeValueType.arr;
-
     }
 }
