@@ -15,18 +15,14 @@ namespace Tester
 {
     public static class ContainerConfig
     {
+        public static string method = Converter.RECURSION;
         public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
 
-            var method = new
-            {
-                Recursion = "Recursion",
-                Parallel = "Parallel"
-            };
             builder
                 .RegisterAssemblyTypes(Assembly.Load(nameof(TextConvertorNuget)))
-                .Where(t => t.Namespace.Contains(method.Recursion))
+                .Where(t => t.Namespace.Contains(method))
                 .As(t => Assembly
                             .Load(nameof(TextConvertorNuget)).DefinedTypes
                             .Where(i => i.Namespace.Contains("Interfaces") && i.Name == "I" + t.Name)

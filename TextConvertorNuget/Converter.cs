@@ -5,6 +5,9 @@ namespace TextConvertorNuget
 {
     public class Converter : IConverter
     {
+        public const string RECURSION = "Recursion";
+        public const string PARALLEL = "Parallel";
+
         private Interfaces.IJsonDeserializer _json_deserializer;
         private Interfaces.IXmlSerializer _xml_serializer;
 

@@ -1,16 +1,9 @@
 {
-  "name": "dani",
-  "age": 23,
-  "is18": false,
-  "todos": {
-    "todo": "make coffee",
-    "todo2": {
-      "name": "learn python",
-      "isDone": false
-    }
-  },
+  "name": "yudi kahn",
   "address": {
-    "street": "david",
-    "zip": 123
-  }
+    "street": "king david",
+    "zip": 123,
+    "city": "ashdod"
+  },
+  "isCool": true
 }

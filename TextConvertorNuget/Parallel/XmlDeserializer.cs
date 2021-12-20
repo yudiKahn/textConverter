@@ -15,27 +15,43 @@ namespace TextConvertorNuget.Parallel
         public IEnumerable<NodeAbstraction> Deserialize(string original)
         {
             original = Trim(original);
-            List<NodeAbstraction> res = new();
-            NodesRecursion(original, (arr, X, Pid) =>
+            List<NodeAbstraction> resList = new();
+            List<string[]> stringsToWorkOn = new() { new string[] { "0", "0", original } };
+
+            int iOfValue = 2, iOfX = 0, iOfPid = 1;
+
+            for (int i = 0; i < stringsToWorkOn.Count; i++)
             {
-                foreach (var kv in arr)
+                var kvs = GetTopNodes(stringsToWorkOn[i][iOfValue]);
+                //if in first iteration check if there is more then one root element
+                System.Threading.Tasks.Parallel.ForEach(kvs, kv =>
                 {
-                    kv.X = X;
-                    kv.PId = Pid;
+                    kv.X = Convert.ToInt32(stringsToWorkOn[i][iOfX]);
+                    kv.PId = stringsToWorkOn[i][iOfPid];
                     kv.ValueType = XmlHelper.GetValueType((string)kv.Value);
-                    res.Add(kv);
-                }
-            });
-            return res.NodesSort();
+                    if (kv.ValueType == NodeValueType.obj || kv.ValueType == NodeValueType.arr)
+                    {
+                        stringsToWorkOn.Add(new string[] {
+                            (Convert.ToInt32(stringsToWorkOn[i][iOfX])+1).ToString(),
+                            kv.Id,
+                            (string)kv.Value
+                        });
+                    }
+                    resList.Add(kv);
+                }); 
+                stringsToWorkOn.RemoveAt(0);
+                i--;
+            };
+
+            return resList.NodesSort();
         }
 
         public int FindTagCloserIndex(int index, string xml)
         {
             int res = -1;
             List<char> tags = new();
-            for (int i = index; i < xml.Length; i++)
+            for(int i = index; i < xml.Length;i++)//System.Threading.Tasks.Parallel.For(index, xml.Length, (i, state) =>
             {
-                char c = xml[i];
                 if (XmlHelper.IsOpenTagOpener(xml[i] + xml.ElementAtOrDefault(i + 1).ToString()))
                 {
                     tags.Add(xml[i]);
@@ -46,16 +62,14 @@ namespace TextConvertorNuget.Parallel
                         return i;
                     if (tags.Count > 0) tags.RemoveAt(tags.Count - 1);
                 }
-            }
+            };//);
             return res;
         }
 
         public IEnumerable<NodeAbstraction> GetTopNodes(string xml)
         {
-            List<NodeAbstraction> res = new();
             for (int i = 0; i < xml.Length; i++)
             {
-                char x = xml[i];
                 if (XmlHelper.IsTagCloser(xml[i]))
                 {
                     int endKeyI = i, startKeyI = i - 1;
@@ -65,29 +79,14 @@ namespace TextConvertorNuget.Parallel
                     string key = xml.Substring(startKeyI, endKeyI - startKeyI);
                     string val = xml.Substring(startValI, endValI - startValI);
 
-                    res.Add(new NodeAbstraction(key, val));
+                    yield return new NodeAbstraction(key, val);
 
                     for (; !XmlHelper.IsTagCloser(xml[endValI]); endValI++) ;
                     i = endValI;
                 }
             }
-            return res;
         }
 
-        public void NodesRecursion(string original, Action<IEnumerable<NodeAbstraction>, int, string> forEach, int X = 0, string PId = "0")
-        {
-            var tmp = GetTopNodes(original);
-            forEach(tmp, X, PId);
-            foreach (var kv in tmp)
-            {
-                string val = (string)kv.Value;
-                if (XmlHelper.IsOpenTagOpener(val[0] + val[1].ToString()))
-                {
-                    NodesRecursion(val, forEach, X + 1, kv.Id);
-                }
-            }
-        }
-
-        public string Trim(string original) => new Regex("(\n|\t|\r)").Replace(original, "");
+        public string Trim(string input) => Regex.Replace(input, @"(>\s+|\s+<)", m => m.Value.Contains('<') ? "<" : ">");
     }
 }

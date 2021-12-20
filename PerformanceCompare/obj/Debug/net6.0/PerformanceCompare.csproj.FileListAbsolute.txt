@@ -10,4 +10,3 @@ D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompar
 D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.dll
 D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\ref\PerformanceCompare.dll
 D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.pdb
-D:\Projects\Text Convertor\PerformanceCompare\obj\Debug\net6.0\PerformanceCompare.csproj.AssemblyReference.cache

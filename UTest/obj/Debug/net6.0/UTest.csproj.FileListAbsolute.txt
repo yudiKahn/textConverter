@@ -1,4 +1,3 @@
-D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\CoverletSourceRootsMapping
 D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\testhost.dll
 D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\testhost.exe
 D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -90,9 +89,6 @@ D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio
 D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\Class Library.dll
-D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\Class Library.pdb
-D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.csproj.AssemblyReference.cache
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.AssemblyInfoInputs.cache
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.AssemblyInfo.cs
@@ -102,4 +98,3 @@ D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.dll
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\ref\UTest.dll
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.pdb
 D:\Projects\Text Convertor\UTest\obj\Debug\net6.0\UTest.genruntimeconfig.cache
-D:\Projects\Text Convertor\UTest\bin\Debug\net6.0\Serilog.dll

@@ -14,31 +14,43 @@ namespace TextConvertorNuget.Parallel
         public IEnumerable<NodeAbstraction> Deserialize(string original)
         {
             original = "\"__root\":" + Trim(original);
+            var tmpNodes = GetTopNodes(original);
+            if (tmpNodes.Count() > 1) throw new Exception("There are more then one root element");
             List<NodeAbstraction> resList = new();
-            
-            do
+            List<string[]> stringsToWorkOn = new() { new string[] { "0","0", original } };
+
+            int iOfValue = 2, iOfX = 0, iOfPid = 1;
+
+            for(int i = 0;i < stringsToWorkOn.Count; i++)
             {
-                var tmpNodes = GetTopNodes(original);
-                int x = 0;
-                string pid = "0";
-                System.Threading.Tasks.Parallel.ForEach(tmpNodes, kv =>
+                var kvs = GetTopNodes(stringsToWorkOn[i][iOfValue]);
+                System.Threading.Tasks.Parallel.ForEach(kvs, kv =>
                 {
-                    kv.X = x;
-                    kv.PId = pid;
-                    if (((string)kv.Value)[0] == '{') kv.ValueType = NodeValueType.obj;
-                    else if (((string)kv.Value)[0] == '[') kv.ValueType = NodeValueType.arr;
+                    kv.X = Convert.ToInt32(stringsToWorkOn[i][iOfX]);
+                    kv.PId = stringsToWorkOn[i][iOfPid];
+                    if (((string)kv.Value)[0] == '{' || ((string)kv.Value)[0] == '[')
+                    {
+                        stringsToWorkOn.Add(new string[] { 
+                            (Convert.ToInt32(stringsToWorkOn[i][iOfX])+1).ToString(),
+                            kv.Id,
+                            (string)kv.Value 
+                        });
+                        if (((string)kv.Value)[0] == '{') kv.ValueType = NodeValueType.obj;
+                        else if (((string)kv.Value)[0] == '[') kv.ValueType = NodeValueType.arr;
+                    }
                     else if (((string)kv.Value)[0] == '"')
                     {
                         kv.ValueType = NodeValueType.str;
                         kv.Value = ((string)kv.Value).CleanQuotationMarks();
                     }
                     else if (char.IsDigit(((string)kv.Value)[0])) kv.ValueType = NodeValueType.num;
-                    else if (((string)kv.Value)[0] == 't' || ((string)kv.Value)[0] == 'f') kv.ValueType = NodeValueType.bol;
+                    else if (((string)kv.Value).IsBool()) kv.ValueType = NodeValueType.bol;
                     resList.Add(kv);
-
-
                 });
-            } while (false);
+
+                stringsToWorkOn.RemoveAt(0);
+                i--;
+            };
 
             return resList.NodesSort();
         }
@@ -141,7 +153,7 @@ namespace TextConvertorNuget.Parallel
         }
  
         public string Trim(string input) =>
-            Regex.Replace(Regex.Replace(input, @"(\\r|\\n|\\t)", " "), @"\s(?=(?:""[^""]*""|[^""])*$)", string.Empty);
+            Regex.Replace(input, @"\s(?=(?:""[^""]*""|[^""])*$)", string.Empty);
         public static bool IsTagMatch(char open, char close) => (open == '[' && close == ']') || (open == '{' && close == '}');
     }
 }
