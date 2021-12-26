@@ -14,6 +14,7 @@
         * It is in the same format, but it's not written conventionally.
         * A timeout error. Like if the string is too long (or heavy, in the case of a file).
         * If the input and output format is the same, we should - maybe - warn the developer of a possible error.
+    - 
 - __Required platforms__: .NET 6
 - __Design inputs__: The NuGet package will be built on .NET 6 platform using C#.
 - __Algorithm description__: Our project is mainly an algorithm project, so our code will do those steps:

@@ -12,6 +12,7 @@ namespace TextConvertorNuget
         num,
         bol,
         obj,
-        arr
+        arr,
+        com
     }
 }

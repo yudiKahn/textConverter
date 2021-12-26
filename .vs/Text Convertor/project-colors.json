@@ -40,7 +40,12 @@
       "ProjectGuid": "375a63e1-4a54-474c-8847-043e3a941cfb",
       "DisplayName": "TextConvertorNuget",
       "ColorIndex": 6
+    },
+    "1e8beaf5-f625-4774-93c6-942ecabb2848": {
+      "ProjectGuid": "1e8beaf5-f625-4774-93c6-942ecabb2848",
+      "DisplayName": "MSTest",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 8
 }

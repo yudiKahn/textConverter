@@ -1,9 +1,3 @@
 {
-  "name": "yudi kahn",
-  "address": {
-    "street": "king david",
-    "zip": 123,
-    "city": "ashdod"
-  },
-  "isCool": true
+  "name": "yudi kahn"
 }

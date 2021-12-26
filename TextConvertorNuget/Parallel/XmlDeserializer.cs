@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TextConvertorNuget.Interfaces;
 using TextConvertorNuget.Service.Extensions;
 using TextConvertorNuget.Service;
+using Serilog;
 
 namespace TextConvertorNuget.Parallel
 {
@@ -18,7 +19,7 @@ namespace TextConvertorNuget.Parallel
             List<NodeAbstraction> resList = new();
             List<string[]> stringsToWorkOn = new() { new string[] { "0", "0", original } };
 
-            int iOfValue = 2, iOfX = 0, iOfPid = 1;
+            byte iOfValue = 2, iOfX = 0, iOfPid = 1;
 
             for (int i = 0; i < stringsToWorkOn.Count; i++)
             {
@@ -50,9 +51,9 @@ namespace TextConvertorNuget.Parallel
         {
             int res = -1;
             List<char> tags = new();
-            for(int i = index; i < xml.Length;i++)//System.Threading.Tasks.Parallel.For(index, xml.Length, (i, state) =>
+            for(int i = index; i < xml.Length;i++)
             {
-                if (XmlHelper.IsOpenTagOpener(xml[i] + xml.ElementAtOrDefault(i + 1).ToString()))
+                if (XmlHelper.IsOpenTagOpener(xml[i] + xml[i+1].ToString()))
                 {
                     tags.Add(xml[i]);
                 }
@@ -62,7 +63,7 @@ namespace TextConvertorNuget.Parallel
                         return i;
                     if (tags.Count > 0) tags.RemoveAt(tags.Count - 1);
                 }
-            };//);
+            };
             return res;
         }
 
@@ -76,8 +77,8 @@ namespace TextConvertorNuget.Parallel
                     for (; !XmlHelper.IsOpenTagOpener(xml[startKeyI - 1] + xml[startKeyI].ToString()); startKeyI--) ;
                     int startValI = i + 1, endValI = FindTagCloserIndex(i, xml);
 
-                    string key = xml.Substring(startKeyI, endKeyI - startKeyI);
-                    string val = xml.Substring(startValI, endValI - startValI);
+                    string key = xml[startKeyI..endKeyI];
+                    string val = xml[startValI..endValI];
 
                     yield return new NodeAbstraction(key, val);
 
@@ -88,5 +89,18 @@ namespace TextConvertorNuget.Parallel
         }
 
         public string Trim(string input) => Regex.Replace(input, @"(>\s+|\s+<)", m => m.Value.Contains('<') ? "<" : ">");
+
+        /*public string HandleComments(string original)
+        {
+            var comments = Regex.Matches(original, @"\<!--(.*?)\-->");
+            if (comments.Count > 0)
+            {
+                System.Threading.Tasks.Parallel.ForEach(comments, comment =>
+                {
+                    original = original.Replace(comment.Value, $"start_comment{comment.Groups[1].Value}end_comment ");
+                });
+            }
+            return original;
+        }*/
     }
 }
