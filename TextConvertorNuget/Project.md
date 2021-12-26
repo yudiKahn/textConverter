@@ -13,8 +13,12 @@
         * The string is not in the same format as the deserializer format in the indexer.
         * It is in the same format, but it's not written conventionally.
         * A timeout error. Like if the string is too long (or heavy, in the case of a file).
+<<<<<<< HEAD
         * If the input and output format is the same, we should - maybe - warn the developer of a possible error.
     - 
+=======
+    - If the input and output format is the same, we should - maybe - warn the developer of a possible error.
+>>>>>>> d8ba287a0da277ba5ac7d1b3ed3922d67e02229a
 - __Required platforms__: .NET 6
 - __Design inputs__: The NuGet package will be built on .NET 6 platform using C#.
 - __Algorithm description__: Our project is mainly an algorithm project, so our code will do those steps:
