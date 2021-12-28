@@ -80,3 +80,4 @@ D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\TextConvertorNuget.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\PerformanceCompare.pdb
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\TextConvertorNuget.pdb
 D:\Projects\Text Convertor\ConsoleTester\obj\Debug\net6.0\ConsoleTester.genruntimeconfig.cache
+D:\Projects\Text Convertor\ConsoleTester\obj\Debug\net6.0\ConsoleTester.csproj.CopyComplete

@@ -45,7 +45,12 @@
       "ProjectGuid": "1e8beaf5-f625-4774-93c6-942ecabb2848",
       "DisplayName": "MSTest",
       "ColorIndex": 7
+    },
+    "2ff2fd2d-989d-4fd2-b694-7ac21466e58a": {
+      "ProjectGuid": "2ff2fd2d-989d-4fd2-b694-7ac21466e58a",
+      "DisplayName": "TextConverterWebApplication",
+      "ColorIndex": 8
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 9
 }

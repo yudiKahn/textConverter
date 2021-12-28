@@ -1,23 +1,25 @@
 ﻿using System.Text;
 using TextConvertorNuget;
-using PerformanceCompare;
-using System.Text.RegularExpressions;
-using System.Diagnostics;
-using System;
 using System.Xml;
 using Newtonsoft.Json;
 using System.Xml.Linq;
+using PerformanceCompare;
 
 namespace Tester
 {
     public static class Program
     {
+        static string JsonStr = File.ReadAllText(path: @"D:\Projects\Text Convertor\ConsoleTester\jsonFile.json", encoding: Encoding.UTF8);
+        static string XmlStr = File.ReadAllText(path: @"D:\Projects\Text Convertor\ConsoleTester\xmlFile.xml", encoding: Encoding.UTF8);
         public static void Main()
         {
-            string JsonStr = File.ReadAllText(path: @"D:\Projects\Text Convertor\ConsoleTester\jsonFile.json", encoding: Encoding.UTF8);
-            string XmlStr = File.ReadAllText(path: @"D:\Projects\Text Convertor\ConsoleTester\xmlFile.xml", encoding: Encoding.UTF8);
+            var converter = Factory.GetOfType<IConverter>();
+            var json = converter[(Format.XML, Format.JSON)](XmlStr);
+            Console.WriteLine(json);
+        }
 
-
+        public static void Compare()
+        {
             Performance.Compare(() =>
             {
                 Factory.method = Converter.PARALLEL;

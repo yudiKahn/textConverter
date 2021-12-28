@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using TextConvertorNuget.Interfaces;
-using TextConvertorNuget.Service.Extensions;
 using TextConvertorNuget.Service;
-using Serilog;
+using TextConvertorNuget.Service.Extensions;
+using TextConvertorNuget.Service.Exceptions;
+using TaskParallel = System.Threading.Tasks.Parallel;
 
 namespace TextConvertorNuget.Parallel
 {
@@ -20,12 +16,16 @@ namespace TextConvertorNuget.Parallel
             List<string[]> stringsToWorkOn = new() { new string[] { "0", "0", original } };
 
             byte iOfValue = 2, iOfX = 0, iOfPid = 1;
-
+            bool isFirstLoop = true;
             for (int i = 0; i < stringsToWorkOn.Count; i++)
             {
                 var kvs = GetTopNodes(stringsToWorkOn[i][iOfValue]);
-                //if in first iteration check if there is more then one root element
-                System.Threading.Tasks.Parallel.ForEach(kvs, kv =>
+                if (isFirstLoop)
+                {
+                    if (kvs.Count() > 1) throw new SyntaxException("More then one root element");
+                    isFirstLoop = false;
+                }
+                TaskParallel.ForEach(kvs, kv =>
                 {
                     kv.X = Convert.ToInt32(stringsToWorkOn[i][iOfX]);
                     kv.PId = stringsToWorkOn[i][iOfPid];
@@ -47,9 +47,8 @@ namespace TextConvertorNuget.Parallel
             return resList.NodesSort();
         }
 
-        public int FindTagCloserIndex(int index, string xml)
+        public static int FindTagCloserIndex(int index, string xml)
         {
-            int res = -1;
             List<char> tags = new();
             for(int i = index; i < xml.Length;i++)
             {
@@ -64,43 +63,39 @@ namespace TextConvertorNuget.Parallel
                     if (tags.Count > 0) tags.RemoveAt(tags.Count - 1);
                 }
             };
-            return res;
+            throw new SyntaxException("No closer tag found");
         }
 
         public IEnumerable<NodeAbstraction> GetTopNodes(string xml)
         {
             for (int i = 0; i < xml.Length; i++)
             {
-                if (XmlHelper.IsTagCloser(xml[i]))
+                if (XmlHelper.IsOpenTagOpener(xml[i..(i + 2)]))
                 {
-                    int endKeyI = i, startKeyI = i - 1;
-                    for (; !XmlHelper.IsOpenTagOpener(xml[startKeyI - 1] + xml[startKeyI].ToString()); startKeyI--) ;
-                    int startValI = i + 1, endValI = FindTagCloserIndex(i, xml);
+                    int endKeyI = i+2, startKeyI = i+1;
+                    for (; !XmlHelper.IsTagCloser(xml[endKeyI]); endKeyI++)
+                        if (!XmlHelper.IsValidTagCharacter(xml[endKeyI])) throw new SyntaxException();
+                    
+                    int startValI = endKeyI+1, endValI = FindTagCloserIndex(endKeyI+1, xml);
 
                     string key = xml[startKeyI..endKeyI];
                     string val = xml[startValI..endValI];
 
                     yield return new NodeAbstraction(key, val);
 
-                    for (; !XmlHelper.IsTagCloser(xml[endValI]); endValI++) ;
-                    i = endValI;
+                    for (int j = endValI; true; j++)
+                    {
+                        if (XmlHelper.IsTagCloser(xml[j]))
+                        {
+                            string nameOfClosingTag = xml[(endValI + 2)..j];
+                            if (nameOfClosingTag != key) throw new SyntaxException($"The closing tag doesn't match the opening tag ({key} and {nameOfClosingTag})");
+                            i = j;
+                            break;
+                        }
+                    }
                 }
             }
         }
-
-        public string Trim(string input) => Regex.Replace(input, @"(>\s+|\s+<)", m => m.Value.Contains('<') ? "<" : ">");
-
-        /*public string HandleComments(string original)
-        {
-            var comments = Regex.Matches(original, @"\<!--(.*?)\-->");
-            if (comments.Count > 0)
-            {
-                System.Threading.Tasks.Parallel.ForEach(comments, comment =>
-                {
-                    original = original.Replace(comment.Value, $"start_comment{comment.Groups[1].Value}end_comment ");
-                });
-            }
-            return original;
-        }*/
+        public static string Trim(string input) => Regex.Replace(input, @"(>\s+|\s+<)", m => m.Value.Contains('<') ? "<" : ">");
     }
 }

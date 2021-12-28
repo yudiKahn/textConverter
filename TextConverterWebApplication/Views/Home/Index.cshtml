@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Text Converter Website";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Text Converter</h1>
+</div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-6">
+                <h6> Please enter the text you want to convert here: </h6>
+                <textarea required rows="17" cols="50" name="Text" class="form-control">
+                </textarea>
+
+        </div>
+        <div class="col-sm">
+                <h6> Your converted text is here: </h6>
+                <textarea id="outputttext" rows="17" cols="50" class="form-control">
+                    @ViewData["output"]
+                </textarea>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-4 text-center">
+            <select required name="InputFormat" class="form-control" asp-items="Html.GetEnumSelectList<TextConvertorNuget.Format>()">
+                
+            </select>
+        </div>
+        <div class="col-4 text-center">
+            <input type="submit" value="Convert" class="btn btn-primary" />
+        </div>
+        <div class="col-4 text-center">
+            <select required name="OutputFormat" class="form-control" asp-items="Html.GetEnumSelectList<TextConvertorNuget.Format>()">
+            </select>
+        </div>
+    </div>
+}

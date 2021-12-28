@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,10 @@ using TextConvertorNuget;
 
 namespace MSTest
 {
-    internal class Factory
+    public static class ContainerConfig
     {
         public static string method = Converter.RECURSION;
-
-        public static T GetOfType<T>() where T : notnull
-        {
-            var container = config();
-            using (var scope = container.BeginLifetimeScope())
-            {
-                return scope.Resolve<T>();
-            }
-        }
-        private static IContainer config()
+        public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
 
@@ -34,9 +26,23 @@ namespace MSTest
                 );
 
             builder.RegisterType<Converter>().As<IConverter>();
-            //builder.RegisterType<ConsoleLogger>().As<ILogger>();
+            builder.RegisterType<ConsoleLogger>().As<ILogger>();
 
             return builder.Build();
+        }
+    }
+    public static class Factory
+    {
+        public static string method = Converter.RECURSION;
+
+        public static T GetOfType<T>() where T : notnull
+        {
+            ContainerConfig.method = method;
+            var container = ContainerConfig.Configure();
+            using (var scope = container.BeginLifetimeScope())
+            {
+                return scope.Resolve<T>();
+            }
         }
     }
 }

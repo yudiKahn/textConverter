@@ -10,7 +10,7 @@ namespace Tester
 {
     public static class Factory
     {
-        public static string method = Converter.RECURSION; 
+        public static string method = Converter.PARALLEL; 
 
         public static T GetOfType<T>() where T : notnull
         {

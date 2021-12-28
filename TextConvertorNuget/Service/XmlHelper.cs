@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TextConvertorNuget.Service
@@ -21,5 +22,7 @@ namespace TextConvertorNuget.Service
             else return NodeValueType.str;
         }
 
+        public static bool IsValidTagCharacter(char c) =>
+            Regex.IsMatch(c.ToString(), @"([A-Z]|[0-9]|-|_)", RegexOptions.IgnoreCase);
     }
 }

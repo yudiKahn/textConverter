@@ -11,7 +11,7 @@ namespace TextConvertorNuget.Parallel
     {
         public string Serialize(IEnumerable<NodeAbstraction> nodes)
         {
-            string res = "";
+            string res = "{";
             List<NodeAbstraction> opens = new();
             bool IsInArray = false;
             int i = 0;
@@ -55,7 +55,7 @@ namespace TextConvertorNuget.Parallel
                     res = res.Substring(0, res.Length - 1);
                 res += node.ValueType == NodeValueType.arr ? "]" : "}";
             }
-            return res;
+            return res+'}';
         }
     }
 

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceCompare", "Perfo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConvertorNuget", "TextConvertorNuget\TextConvertorNuget.csproj", "{375A63E1-4A54-474C-8847-043E3A941CFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTest", "MSTest\MSTest.csproj", "{1E8BEAF5-F625-4774-93C6-942ECABB2848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSTest", "MSTest\MSTest.csproj", "{1E8BEAF5-F625-4774-93C6-942ECABB2848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextConverterWebApplication", "TextConverterWebApplication\TextConverterWebApplication.csproj", "{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1E8BEAF5-F625-4774-93C6-942ECABB2848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E8BEAF5-F625-4774-93C6-942ECABB2848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E8BEAF5-F625-4774-93C6-942ECABB2848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

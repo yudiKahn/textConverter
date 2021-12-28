@@ -10,15 +10,11 @@
     string xmlStr = converter[(Format.JSON, Format.XML)](jsonStr);
     ```
     - If there is a problem in the input string, the developer will get an exception with relevant info. The errors that could occur in the input string are:
-        * The string is not in the same format as the deserializer format in the indexer.
-        * It is in the same format, but it's not written conventionally.
-        * A timeout error. Like if the string is too long (or heavy, in the case of a file).
-<<<<<<< HEAD
-        * If the input and output format is the same, we should - maybe - warn the developer of a possible error.
-    - 
-=======
+        1. The string is not in the same format as the deserializer format in the indexer.
+        2. It is in the same format, but it's not written conventionally (Syntax error).
+        3. A timeout error. Like if the string is too long (or heavy, in the case of a file).
+       
     - If the input and output format is the same, we should - maybe - warn the developer of a possible error.
->>>>>>> d8ba287a0da277ba5ac7d1b3ed3922d67e02229a
 - __Required platforms__: .NET 6
 - __Design inputs__: The NuGet package will be built on .NET 6 platform using C#.
 - __Algorithm description__: Our project is mainly an algorithm project, so our code will do those steps:
@@ -29,5 +25,5 @@
     5. After that, we will iterate over each key-value pair and check if the value is of a complex type. If so, we will iterate over it again.
     6. At that point, we will pass all the returned nodes - from the deserializer method - to the serialize method.
 - __Non-functional requirements__:
-    - __Privacy__: Our code will not save any input data.  Just I/O
+    - __Privacy__: Our algorithm will not save any input data.  Just I/O
     - __Performance__: The conversion process will take as long as 10,000ms. Longer than that, we'll throw a Timeout error.

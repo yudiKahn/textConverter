@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "5Z6x36czFlq4hb7Kg4pvLIP7UHkHwZzUnNO/FgCwaMddtJXN6CIBCJ+5v70ljsbM0p61Pqezgn5VFZJjEPgilw==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Text Convertor\\TextConverterWebApplication\\TextConverterWebApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\97255\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\serilog.sinks.console\\4.0.1\\serilog.sinks.console.4.0.1.nupkg.sha512",
+    "C:\\Users\\97255\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

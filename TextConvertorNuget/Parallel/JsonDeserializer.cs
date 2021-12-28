@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TextConvertorNuget.Interfaces;
+using TextConvertorNuget.Service.Exceptions;
 using TextConvertorNuget.Service.Extensions;
 
 namespace TextConvertorNuget.Parallel
@@ -14,16 +15,20 @@ namespace TextConvertorNuget.Parallel
         public IEnumerable<NodeAbstraction> Deserialize(string original)
         {
             original = "\"__root\":" + Trim(original);
-            var tmpNodes = GetTopNodes(original);
-            if (tmpNodes.Count() > 1) throw new Exception("There are more then one root element");
             List<NodeAbstraction> resList = new();
             List<string[]> stringsToWorkOn = new() { new string[] { "0","0", original } };
 
-            int iOfValue = 2, iOfX = 0, iOfPid = 1;
+            byte iOfValue = 2, iOfX = 0, iOfPid = 1;
 
-            for(int i = 0;i < stringsToWorkOn.Count; i++)
+            bool isFirstLoop = true;
+            for(int i = 0; i < stringsToWorkOn.Count; i++)
             {
                 var kvs = GetTopNodes(stringsToWorkOn[i][iOfValue]);
+                if (isFirstLoop)
+                {
+                    if (kvs.Count() > 1) throw new SyntaxException("More then one root element");
+                    isFirstLoop = false;
+                }
                 System.Threading.Tasks.Parallel.ForEach(kvs, kv =>
                 {
                     kv.X = Convert.ToInt32(stringsToWorkOn[i][iOfX]);
@@ -55,7 +60,7 @@ namespace TextConvertorNuget.Parallel
             return resList.NodesSort();
         }
 
-        public int FindTagCloserIndex(int index, string json)
+        public static int FindTagCloserIndex(int index, string json)
         {
             if (json[index] == '"')
             {
@@ -83,7 +88,6 @@ namespace TextConvertorNuget.Parallel
                 List<char> tags = new();
 
                 if (!json[index].ToString().IsOpener(Format.JSON)) throw new Exception();
-                //else if(IsCloser(json[index]))
                 tags.Add(json[index]);
                 for (int i = index + 1; i < json.Length; i++)
                 {
@@ -96,7 +100,7 @@ namespace TextConvertorNuget.Parallel
                     }
                 }
             }
-            return -1;
+            throw new SyntaxException("No closer tag found");
         }
 
         public IEnumerable<NodeAbstraction> GetTopNodes(string json)
@@ -117,7 +121,7 @@ namespace TextConvertorNuget.Parallel
                 }
                 else if (json[0] == '[' && i > 0)// there is no key (in array)
                 {
-                    int startVal = i, endVal = 0;
+                    int startVal = i, endVal;
                     bool isPrimitive = json[i] == '"' || json[i] == 't' || json[i] == 'f' || char.IsDigit(json[i]);
                     List<char> tags = new() { json[i] };
 
@@ -152,7 +156,7 @@ namespace TextConvertorNuget.Parallel
             return res;
         }
  
-        public string Trim(string input) =>
+        public static string Trim(string input) =>
             Regex.Replace(input, @"\s(?=(?:""[^""]*""|[^""])*$)", string.Empty);
         public static bool IsTagMatch(char open, char close) => (open == '[' && close == ']') || (open == '{' && close == '}');
     }
