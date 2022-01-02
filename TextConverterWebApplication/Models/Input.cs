@@ -1,4 +1,4 @@
-﻿using TextConvertorNuget;
+﻿using TextConverterLibrary;
 
 namespace TextConverterWebApplication.Models
 {

@@ -31,8 +31,8 @@
               "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj": {
                 "projectPath": "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj"
               },
-              "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj": {
-                "projectPath": "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj"
+              "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj": {
+                "projectPath": "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj"
               }
             }
           }
@@ -135,14 +135,14 @@
         }
       }
     },
-    "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj": {
+    "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj",
-        "projectName": "TextConvertorNuget",
-        "projectPath": "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj",
+        "projectUniqueName": "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj",
+        "projectName": "TextConverterLibrary",
+        "projectPath": "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj",
         "packagesPath": "C:\\Users\\97255\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Text Convertor\\TextConvertorNuget\\obj\\",
+        "outputPath": "D:\\Projects\\Text Convertor\\TextConverterLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\97255\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -171,6 +171,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[2.10.0, )"

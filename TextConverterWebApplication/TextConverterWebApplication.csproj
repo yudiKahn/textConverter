@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TextConverterLibrary\TextConverterLibrary.csproj" />
     <ProjectReference Include="..\TextConvertorNuget\TextConvertorNuget.csproj" />
   </ItemGroup>
 

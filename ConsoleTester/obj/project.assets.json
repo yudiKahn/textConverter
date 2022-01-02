@@ -216,18 +216,19 @@
           "bin/placeholder/PerformanceCompare.dll": {}
         }
       },
-      "TextConvertorNuget/1.0.0": {
+      "TextConverterLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Autofac": "6.3.0",
           "Serilog": "2.10.0",
           "Serilog.Sinks.Console": "4.0.1"
         },
         "compile": {
-          "bin/placeholder/TextConvertorNuget.dll": {}
+          "bin/placeholder/TextConverterLibrary.dll": {}
         },
         "runtime": {
-          "bin/placeholder/TextConvertorNuget.dll": {}
+          "bin/placeholder/TextConverterLibrary.dll": {}
         }
       }
     }
@@ -594,10 +595,10 @@
       "path": "../PerformanceCompare/PerformanceCompare.csproj",
       "msbuildProject": "../PerformanceCompare/PerformanceCompare.csproj"
     },
-    "TextConvertorNuget/1.0.0": {
+    "TextConverterLibrary/1.0.0": {
       "type": "project",
-      "path": "../TextConvertorNuget/TextConvertorNuget.csproj",
-      "msbuildProject": "../TextConvertorNuget/TextConvertorNuget.csproj"
+      "path": "../TextConverterLibrary/TextConverterLibrary.csproj",
+      "msbuildProject": "../TextConverterLibrary/TextConverterLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -605,7 +606,7 @@
       "Autofac >= 6.3.0",
       "Newtonsoft.Json >= 13.0.1",
       "PerformanceCompare >= 1.0.0",
-      "TextConvertorNuget >= 1.0.0"
+      "TextConverterLibrary >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -638,8 +639,8 @@
             "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj": {
               "projectPath": "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj"
             },
-            "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj": {
-              "projectPath": "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj"
+            "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj": {
+              "projectPath": "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj"
             }
           }
         }

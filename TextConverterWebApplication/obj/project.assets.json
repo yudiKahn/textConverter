@@ -44,6 +44,21 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "TextConverterLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Autofac": "6.3.0",
+          "Serilog": "2.10.0",
+          "Serilog.Sinks.Console": "4.0.1"
+        },
+        "compile": {
+          "bin/placeholder/TextConverterLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TextConverterLibrary.dll": {}
+        }
+      },
       "TextConvertorNuget/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -152,6 +167,11 @@
         "version.txt"
       ]
     },
+    "TextConverterLibrary/1.0.0": {
+      "type": "project",
+      "path": "../TextConverterLibrary/TextConverterLibrary.csproj",
+      "msbuildProject": "../TextConverterLibrary/TextConverterLibrary.csproj"
+    },
     "TextConvertorNuget/1.0.0": {
       "type": "project",
       "path": "../TextConvertorNuget/TextConvertorNuget.csproj",
@@ -161,6 +181,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Autofac >= 6.3.0",
+      "TextConverterLibrary >= 1.0.0",
       "TextConvertorNuget >= 1.0.0"
     ]
   },
@@ -191,6 +212,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj": {
+              "projectPath": "D:\\Projects\\Text Convertor\\TextConverterLibrary\\TextConverterLibrary.csproj"
+            },
             "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj": {
               "projectPath": "D:\\Projects\\Text Convertor\\TextConvertorNuget\\TextConvertorNuget.csproj"
             }

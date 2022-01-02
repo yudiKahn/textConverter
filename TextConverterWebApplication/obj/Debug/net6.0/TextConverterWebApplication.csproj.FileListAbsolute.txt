@@ -27,6 +27,7 @@ D:\Projects\Text Convertor\TextConverterWebApplication\obj\Debug\net6.0\TextConv
 D:\Projects\Text Convertor\TextConverterWebApplication\obj\Debug\net6.0\TextConverterWebApplication.genruntimeconfig.cache
 D:\Projects\Text Convertor\TextConverterWebApplication\bin\Debug\net6.0\Serilog.dll
 D:\Projects\Text Convertor\TextConverterWebApplication\bin\Debug\net6.0\Serilog.Sinks.Console.dll
-D:\Projects\Text Convertor\TextConverterWebApplication\bin\Debug\net6.0\TextConvertorNuget.dll
-D:\Projects\Text Convertor\TextConverterWebApplication\bin\Debug\net6.0\TextConvertorNuget.pdb
 D:\Projects\Text Convertor\TextConverterWebApplication\bin\Debug\net6.0\Autofac.dll
+D:\Projects\Text Convertor\TextConverterWebApplication\bin\Debug\net6.0\TextConvertorLibrary.dll
+D:\Projects\Text Convertor\TextConverterWebApplication\bin\Debug\net6.0\TextConvertorLibrary.pdb
+D:\Projects\Text Convertor\TextConverterWebApplication\obj\Debug\net6.0\TextConverterWebApplication.csproj.CopyComplete

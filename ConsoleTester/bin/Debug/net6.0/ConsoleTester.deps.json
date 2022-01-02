@@ -11,7 +11,7 @@
           "Autofac": "6.3.0",
           "Newtonsoft.Json": "13.0.1",
           "PerformanceCompare": "1.0.0",
-          "TextConvertorNuget": "1.0.0"
+          "TextConverterLibrary": "1.0.0"
         },
         "runtime": {
           "ConsoleTester.dll": {}
@@ -199,13 +199,14 @@
           "PerformanceCompare.dll": {}
         }
       },
-      "TextConvertorNuget/1.0.0": {
+      "TextConverterLibrary/1.0.0": {
         "dependencies": {
+          "Autofac": "6.3.0",
           "Serilog": "2.10.0",
           "Serilog.Sinks.Console": "4.0.1"
         },
         "runtime": {
-          "TextConvertorNuget.dll": {}
+          "TextConverterLibrary.dll": {}
         }
       }
     }
@@ -312,7 +313,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "TextConvertorNuget/1.0.0": {
+    "TextConverterLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using TextConverterLibrary;
 using TextConverterWebApplication.Models;
-using TextConvertorNuget;
 
 namespace TextConverterWebApplication.Controllers
 {
@@ -17,8 +17,8 @@ namespace TextConverterWebApplication.Controllers
         [HttpPost]
         public IActionResult Index(Input input)
         {
-            var converter = Factory.GetOfType<IConverter>();
-            var output = converter[(input.InputFormat, input.OutputFormat)](input.Text);
+            var converter = new TextConverterLibrary.Converter();
+            var output = converter.Convert(input.InputFormat, input.OutputFormat, input.Text);
             ViewData["output"] = output;
             return View();
         }

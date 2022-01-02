@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PerformanceCompare\PerformanceCompare.csproj" />
-    <ProjectReference Include="..\TextConvertorNuget\TextConvertorNuget.csproj" />
+    <ProjectReference Include="..\TextConverterLibrary\TextConverterLibrary.csproj" />
   </ItemGroup>
 
 </Project>

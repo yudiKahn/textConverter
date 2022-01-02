@@ -1,9 +1,9 @@
 ﻿using System.Text;
-using TextConvertorNuget;
 using System.Xml;
 using Newtonsoft.Json;
 using System.Xml.Linq;
 using PerformanceCompare;
+using TextConverterLibrary;
 
 namespace Tester
 {
@@ -13,8 +13,8 @@ namespace Tester
         static string XmlStr = File.ReadAllText(path: @"D:\Projects\Text Convertor\ConsoleTester\xmlFile.xml", encoding: Encoding.UTF8);
         public static void Main()
         {
-            var converter = Factory.GetOfType<IConverter>();
-            var json = converter[(Format.XML, Format.JSON)](XmlStr);
+            var converter = new Converter();
+            var json = converter.Convert(Format.XML, Format.JSON, XmlStr);
             Console.WriteLine(json);
         }
 
@@ -22,16 +22,9 @@ namespace Tester
         {
             Performance.Compare(() =>
             {
-                Factory.method = Converter.PARALLEL;
-                var converter = Factory.GetOfType<IConverter>();
-                var res = converter[(Format.JSON, Format.XML)](JsonStr);
                 return "Parallel json to xml";
             }, () =>
             {
-                Factory.method = Converter.PARALLEL;
-                var converter = Factory.GetOfType<IConverter>();
-                var res = converter[(Format.JSON, Format.XML)](JsonStr);
-                //Console.WriteLine(res);
                 return "Recursion json to xml";
             }, () =>
             {
