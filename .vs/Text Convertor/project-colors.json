@@ -50,7 +50,12 @@
       "ProjectGuid": "2ff2fd2d-989d-4fd2-b694-7ac21466e58a",
       "DisplayName": "TextConverterWebApplication",
       "ColorIndex": 8
+    },
+    "952aa78c-089f-41b7-8d16-2f0230db2d0a": {
+      "ProjectGuid": "952aa78c-089f-41b7-8d16-2f0230db2d0a",
+      "DisplayName": "Generator",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }

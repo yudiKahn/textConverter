@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConverterLibrary", "Tex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConverterWebApplication", "TextConverterWebApplication\TextConverterWebApplication.csproj", "{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Generator.csproj", "{952AA78C-089F-41B7-8D16-2F0230DB2D0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FF2FD2D-989D-4FD2-B694-7AC21466E58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952AA78C-089F-41B7-8D16-2F0230DB2D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952AA78C-089F-41B7-8D16-2F0230DB2D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952AA78C-089F-41B7-8D16-2F0230DB2D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952AA78C-089F-41B7-8D16-2F0230DB2D0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

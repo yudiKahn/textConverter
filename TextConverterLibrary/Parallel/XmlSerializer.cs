@@ -27,7 +27,7 @@ namespace TextConverterLibrary.Parallel
                 res += $"<{node.Key}>";
                 if (IsPrimitiveValue(node) || node.GetNumOfChildren(nodes) == 0)
                 {
-                    res += $"{((string)node.Value)}</{node.Key}>";
+                    res += $"{node.Value}</{node.Key}>";
                 }
                 else
                     opens.Add(node);

@@ -1,0 +1,16 @@
+D:\Projects\Text Convertor\Generator\bin\Debug\net6.0\Generator.deps.json
+D:\Projects\Text Convertor\Generator\bin\Debug\net6.0\Generator.dll
+D:\Projects\Text Convertor\Generator\bin\Debug\net6.0\ref\Generator.dll
+D:\Projects\Text Convertor\Generator\bin\Debug\net6.0\Generator.pdb
+D:\Projects\Text Convertor\Generator\bin\Debug\net6.0\TextConverterLibrary.dll
+D:\Projects\Text Convertor\Generator\bin\Debug\net6.0\TextConverterLibrary.pdb
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.GlobalUsings.g.cs
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.csproj.AssemblyReference.cache
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.AssemblyInfoInputs.cache
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.AssemblyInfo.cs
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.csproj.CoreCompileInputs.cache
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.dll
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\ref\Generator.dll
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.pdb
+D:\Projects\Text Convertor\Generator\obj\Debug\net6.0\Generator.csproj.CopyComplete

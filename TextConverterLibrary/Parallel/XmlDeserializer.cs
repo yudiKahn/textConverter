@@ -3,7 +3,6 @@ using TextConverterLibrary.Interfaces;
 using TextConverterLibrary.Service;
 using TextConverterLibrary.Service.Extensions;
 using TextConverterLibrary.Service.Exceptions;
-using TaskParallel = System.Threading.Tasks.Parallel;
 
 namespace TextConverterLibrary.Parallel
 {
@@ -25,7 +24,7 @@ namespace TextConverterLibrary.Parallel
                     if (kvs.Count() > 1) throw new SyntaxException("More then one root element");
                     isFirstLoop = false;
                 }
-                TaskParallel.ForEach(kvs, kv =>
+                System.Threading.Tasks.Parallel.ForEach(kvs, kv =>
                 {
                     kv.X = Convert.ToInt32(stringsToWorkOn[i][iOfX]);
                     kv.PId = stringsToWorkOn[i][iOfPid];
@@ -68,6 +67,7 @@ namespace TextConverterLibrary.Parallel
 
         public IEnumerable<NodeAbstraction> GetTopNodes(string xml)
         {
+            List<NodeAbstraction> res = new();
             for (int i = 0; i < xml.Length; i++)
             {
                 if (XmlHelper.IsOpenTagOpener(xml[i..(i + 2)]))
@@ -81,7 +81,7 @@ namespace TextConverterLibrary.Parallel
                     string key = xml[startKeyI..endKeyI];
                     string val = xml[startValI..endValI];
 
-                    yield return new NodeAbstraction(key, val);
+                    res.Add(new NodeAbstraction(key, val));
 
                     for (int j = endValI; true; j++)
                     {
@@ -95,6 +95,7 @@ namespace TextConverterLibrary.Parallel
                     }
                 }
             }
+            return res;
         }
         public static string Trim(string input) => Regex.Replace(input, @"(>\s+|\s+<)", m => m.Value.Contains('<') ? "<" : ">");
     }

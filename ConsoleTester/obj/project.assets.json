@@ -203,6 +203,19 @@
           }
         }
       },
+      "Generator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "TextConverterLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Generator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Generator.dll": {}
+        }
+      },
       "PerformanceCompare/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -590,6 +603,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Generator/1.0.0": {
+      "type": "project",
+      "path": "../Generator/Generator.csproj",
+      "msbuildProject": "../Generator/Generator.csproj"
+    },
     "PerformanceCompare/1.0.0": {
       "type": "project",
       "path": "../PerformanceCompare/PerformanceCompare.csproj",
@@ -604,6 +622,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Autofac >= 6.3.0",
+      "Generator >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1",
       "PerformanceCompare >= 1.0.0",
       "TextConverterLibrary >= 1.0.0"
@@ -636,6 +655,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Projects\\Text Convertor\\Generator\\Generator.csproj": {
+              "projectPath": "D:\\Projects\\Text Convertor\\Generator\\Generator.csproj"
+            },
             "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj": {
               "projectPath": "D:\\Projects\\Text Convertor\\PerformanceCompare\\PerformanceCompare.csproj"
             },

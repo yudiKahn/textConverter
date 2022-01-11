@@ -9,6 +9,7 @@
       "ConsoleTester/1.0.0": {
         "dependencies": {
           "Autofac": "6.3.0",
+          "Generator": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "PerformanceCompare": "1.0.0",
           "TextConverterLibrary": "1.0.0"
@@ -191,6 +192,14 @@
           }
         }
       },
+      "Generator/1.0.0": {
+        "dependencies": {
+          "TextConverterLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Generator.dll": {}
+        }
+      },
       "PerformanceCompare/1.0.0": {
         "dependencies": {
           "System.Diagnostics.PerformanceCounter": "6.0.0"
@@ -307,6 +316,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "Generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "PerformanceCompare/1.0.0": {
       "type": "project",

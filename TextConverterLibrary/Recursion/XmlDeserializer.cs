@@ -80,8 +80,8 @@ namespace TextConverterLibrary.Recursion
             forEach(tmp, X, PId);
             foreach (var kv in tmp)
             {
-                string val = (string)kv.Value;
-                if (XmlHelper.IsOpenTagOpener(val[0] + val[1].ToString()))
+                string val = kv.Value.ToString();
+                if (val.Length > 1 && XmlHelper.IsOpenTagOpener(val[0] + val[1].ToString()))
                 {
                     NodesRecursion(val, forEach, X + 1, kv.Id);
                 }

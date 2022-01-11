@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Generator\Generator.csproj" />
     <ProjectReference Include="..\PerformanceCompare\PerformanceCompare.csproj" />
     <ProjectReference Include="..\TextConverterLibrary\TextConverterLibrary.csproj" />
   </ItemGroup>

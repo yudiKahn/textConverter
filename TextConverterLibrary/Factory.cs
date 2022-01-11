@@ -27,10 +27,7 @@ namespace TextConverterLibrary
             builder
                 .RegisterAssemblyTypes(Assembly.Load(nameof(TextConverterLibrary)))
                 .Where(t => t.Namespace.Contains(Method))
-                .As(t => Assembly
-                            .Load(nameof(TextConverterLibrary)).DefinedTypes
-                            .Where(i => i.Namespace.Contains("Interfaces") && i.Name == "I" + t.Name)
-                );
+                .As(t => t.GetInterfaces()[0]);
 
             builder.RegisterType<ConsoleLogger>().As<ILogger>();
 
