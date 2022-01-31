@@ -45,5 +45,19 @@ namespace TextConverterLibrary.Service.Extensions
             }
             return res;
         }
+
+        public static bool IsEqual(this IEnumerable<NodeAbstraction> _this, IEnumerable<NodeAbstraction> other)
+        {
+            var res = true;
+            var i = 0;
+            foreach (var item in _this)
+            {
+                var o = other.ElementAt(i);
+                if (!item.Key.Equals(o.Key) || !item.Value.Equals(o.Value))
+                    return false;
+                i++;
+            }
+            return res;
+        }
     }
 }

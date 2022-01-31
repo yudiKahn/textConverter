@@ -41,7 +41,6 @@ D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\ConsoleTester.dll
 D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\ref\ConsoleTester.dll
 D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\ConsoleTester.pdb
 D:\Projects\Text Convertor\Tester\obj\Debug\net6.0\ConsoleTester.genruntimeconfig.cache
-D:\Projects\Text Convertor\ConsoleTester\obj\Debug\net6.0\ConsoleTester.GlobalUsings.g.cs
 D:\Projects\Text Convertor\ConsoleTester\obj\Debug\net6.0\ConsoleTester.csproj.AssemblyReference.cache
 D:\Projects\Text Convertor\ConsoleTester\obj\Debug\net6.0\ConsoleTester.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\Text Convertor\ConsoleTester\obj\Debug\net6.0\ConsoleTester.AssemblyInfoInputs.cache
@@ -64,7 +63,6 @@ D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\Serilog.Sinks.Console.
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\System.Security.AccessControl.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\System.Security.Permissions.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\System.Windows.Extensions.dll
@@ -72,7 +70,6 @@ D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\runtimes\win\lib\net6.
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.AccessControl.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\PerformanceCompare.dll
@@ -82,3 +79,4 @@ D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\TextConverterLibrary.d
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\TextConverterLibrary.pdb
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\Generator.dll
 D:\Projects\Text Convertor\ConsoleTester\bin\Debug\net6.0\Generator.pdb
+D:\Projects\Text Convertor\ConsoleTester\obj\Debug\net6.0\ConsoleTester.csproj.CopyComplete

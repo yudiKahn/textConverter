@@ -55,7 +55,17 @@
       "ProjectGuid": "952aa78c-089f-41b7-8d16-2f0230db2d0a",
       "DisplayName": "Generator",
       "ColorIndex": 9
+    },
+    "e900870d-5fa5-46da-a5d1-8805b279e58a": {
+      "ProjectGuid": "e900870d-5fa5-46da-a5d1-8805b279e58a",
+      "DisplayName": "WebDemo",
+      "ColorIndex": 10
+    },
+    "86db866a-869e-406b-babe-c7988dcac8f7": {
+      "ProjectGuid": "86db866a-869e-406b-babe-c7988dcac8f7",
+      "DisplayName": "WebApp",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 12
 }

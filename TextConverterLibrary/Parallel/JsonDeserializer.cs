@@ -14,7 +14,7 @@ namespace TextConverterLibrary.Parallel
     {
         public IEnumerable<NodeAbstraction> Deserialize(string original)
         {
-            original = "\"__root\":" + Trim(original);
+            original = /*"\"__root\":" +*/ Trim(original);
             List<NodeAbstraction> resList = new();
             List<string[]> stringsToWorkOn = new() { new string[] { "0","0", original } };
 

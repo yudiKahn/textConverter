@@ -12,7 +12,7 @@ namespace Generator
             return serializer.Serialize(structure);
         }
 
-        public static IEnumerable<NodeAbstraction> StructureFromType<T>() where T  : new()
+        public static IEnumerable<NodeAbstraction> AbstractSyntaxTree<T>() where T  : new()
         {
             Type t = typeof(T);
             NodeAbstraction parent = new(t.Name, "");
@@ -20,41 +20,49 @@ namespace Generator
             parent.PId = "0";
 
             List<NodeAbstraction> res = new() { parent};
-            foreach (var prop in t.GetProperties())
+            List<(Type, NodeAbstraction) > types = new() { (t,parent) };
+
+            for(int i=0; i<types.Count; i++)
             {
-                NodeAbstraction tmp = new(prop.Name,"");
-                tmp.ValueType = getValueTypeFromString(prop.PropertyType.Name);
-                tmp.Value = getRndValueFromType(tmp.ValueType);
-                tmp.PId = parent.Id;
-                res.Add(tmp);
+                foreach (var prop in types[i].Item1.GetProperties())
+                {
+                    if (prop.PropertyType.IsPrimitive || prop.PropertyType == typeof(string))
+                    {
+                        res.Add(new NodeAbstraction(prop.Name, GetRndValueFromType(prop.PropertyType))
+                        {
+                             PId = types[i].Item2.Id, ValueType = GetValueTypeFromType(prop.PropertyType)
+                        });
+                    } 
+                }
             }
             return res;
         }
-
-        private static NodeValueType getValueTypeFromString(string str)
+        private static NodeValueType GetValueTypeFromType(Type type)
         {
-            switch (str.ToLower())
-            {
-                case "boolean": return NodeValueType.bol;
-                case "int32":return NodeValueType.num;
-                case "string": default: return NodeValueType.str;
-            }
+            if (type == typeof(bool)) return NodeValueType.bol;
+            else if (type == typeof(string)) return NodeValueType.str;
+            else if (type == typeof(int)) return NodeValueType.num;
+            else if (type.IsArray) return NodeValueType.arr;
+            else return NodeValueType.obj;
         }
-        private static object getRndValueFromType(NodeValueType type)
+        private static object GetRndValueFromType(Type type)
         {
             var rnd = new Random();
-            switch (type)
+            if(type == typeof(bool))
+                return new bool[] { true, false }[rnd.Next(0, 2)].ToString().ToLower();
+            else if(type == typeof(int))
+                return rnd.Next(0, int.MaxValue);
+            else if(type == typeof(string))
             {
-                case NodeValueType.bol: return new bool[]{true,false }[rnd.Next(0,2)].ToString().ToLower();
-                case NodeValueType.str:
-                    int lngthOfTxt = rnd.Next(2, 10);
-                    string res = "";
-                    for (int i = 0; i < lngthOfTxt; i++)
-                        res += (char)rnd.Next('a','z');
-                    return res;
-                case NodeValueType.num: return rnd.Next(0, 10);
-                default: return "default";
+                int lngthOfTxt = rnd.Next(2, 10);
+                string res = "";
+                for (int i = 0; i < lngthOfTxt; i++)
+                    res += (char)rnd.Next('a', 'z');
+                return res;
             }
+            else if(type == typeof(char))
+                return (char)rnd.Next(char.MinValue, char.MaxValue);
+            return "null";
         }
     }
 }

@@ -2,7 +2,6 @@ D:\Projects\Text Convertor\TextConverterLibrary\bin\Debug\net6.0\TextConverterLi
 D:\Projects\Text Convertor\TextConverterLibrary\bin\Debug\net6.0\TextConverterLibrary.dll
 D:\Projects\Text Convertor\TextConverterLibrary\bin\Debug\net6.0\ref\TextConverterLibrary.dll
 D:\Projects\Text Convertor\TextConverterLibrary\bin\Debug\net6.0\TextConverterLibrary.pdb
-D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLibrary.GlobalUsings.g.cs
 D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLibrary.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLibrary.AssemblyInfoInputs.cache
 D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLibrary.AssemblyInfo.cs
@@ -10,3 +9,4 @@ D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLi
 D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLibrary.dll
 D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\ref\TextConverterLibrary.dll
 D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLibrary.pdb
+D:\Projects\Text Convertor\TextConverterLibrary\obj\Debug\net6.0\TextConverterLibrary.csproj.AssemblyReference.cache

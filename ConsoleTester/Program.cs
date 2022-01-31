@@ -1,57 +1,35 @@
-﻿using System.Text;
-using System.Xml;
-using Newtonsoft.Json;
-using System.Xml.Linq;
-using PerformanceCompare;
+﻿using PerformanceCompare;
 using TextConverterLibrary;
 using Generator;
-using TextConverterLibrary.Parallel;
+using System;
 
-namespace Tester
+namespace ConsoleTester
 {
     public static class Program
     {
         public static void Main()
         {
-            string xmlStr = @"<person><name>dani</name><id>4</id></person>";
-            string jsonStr = @"{""person"":{""name"":""dani"",""age"":1}}";
-            Factory.Method = Converter.PARALLEL;
-            string jsStr = new Converter().Convert(from:Format.XML, to:Format.JSON, xmlStr);
-            Console.WriteLine(jsStr);
-            /*Format to = Format.XML, from = Format.JSON;
-            string str = Generate.Text(Generate.StructureFromType<Person>(), from);
-            var converter = new Converter();
-            var xml = converter.Convert(from: from, to: to, str);
-            Console.WriteLine(xml);*/
-        }
+            Performance.Compare(() => {
 
-        public static void Compare()
-        {
-            Performance.Compare(() =>
-            {
-                return "Parallel json to xml";
-            }, () =>
-            {
-                return "Recursion json to xml";
-            }, () =>
-            {
-                XNode node = JsonConvert.DeserializeXNode("");
-                Console.WriteLine(node.ToString());
-                return "newton json to xml";
-            }, () =>
-            {
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml("");
-                string json = JsonConvert.SerializeXmlNode(doc);
-                Console.WriteLine(json);
-                return "newton xml to json";
+                ConverterFactory.Method = ConverterFactory.Parallel;
+                var converter = new Converter();
+
+                var json = Generate.Text(Generate.AbstractSyntaxTree<Model>(), Format.JSON);
+                
+                var xml = converter.Convert(from:Format.JSON, to:Format.XML, input:json);
+
+                return "Parrallel json to xml conversion";
+            }, () => {
+
+                ConverterFactory.Method = ConverterFactory.Recursion;
+                var converter = new Converter();
+
+                var json = Generate.Text(Generate.AbstractSyntaxTree<Model>(), Format.JSON);
+
+                var xml = converter.Convert(from: Format.JSON, to: Format.XML, input: json);
+
+                return "Recusion json to xml conversion";
             }).Print(Console.WriteLine);
         }
-    }
-    public class Person
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public bool IsCool { get; set; }
     }
 }

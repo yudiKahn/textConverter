@@ -1,31 +1,32 @@
 ﻿using Serilog;
 using TextConverterLibrary.Interfaces;
-using Interfaces = TextConverterLibrary.Interfaces;
 
 namespace TextConverterLibrary
 {
     public class Converter : IConverter
     {
-        public const string RECURSION = "Recursion";
-        public const string PARALLEL = "Parallel";
+        private IJsonDeserializer _json_deserializer;
+        private IXmlSerializer _xml_serializer;
 
-        private Interfaces.IJsonDeserializer _json_deserializer;
-        private Interfaces.IXmlSerializer _xml_serializer;
-
-        private Interfaces.IJsonSerializer _json_serializer;
-        private Interfaces.IXmlDeserializer _xml_deserializer;
+        private IJsonSerializer _json_serializer;
+        private IXmlDeserializer _xml_deserializer;
         
         private ILogger _logger;
+
+        public IEnumerable<NodeAbstraction> Deserialize(Format from, string input) => 
+            from == Format.JSON ? 
+            _json_deserializer.Deserialize(input) : _xml_deserializer.Deserialize(input);
+
 
         private Dictionary<(Format, Format), Func<string, string>> _dict;
 
         public Converter()
         {
-            _logger = Factory.GetOfType<ILogger>();
-            _json_deserializer = Factory.GetOfType<IJsonDeserializer>();
-            _json_serializer = Factory.GetOfType<IJsonSerializer>();
-            _xml_serializer = Factory.GetOfType<IXmlSerializer>();
-            _xml_deserializer = Factory.GetOfType<IXmlDeserializer>();
+            _logger = ConverterFactory.GetOfType<ILogger>();
+            _json_deserializer = ConverterFactory.GetOfType<IJsonDeserializer>();
+            _json_serializer = ConverterFactory.GetOfType<IJsonSerializer>();
+            _xml_serializer = ConverterFactory.GetOfType<IXmlSerializer>();
+            _xml_deserializer = ConverterFactory.GetOfType<IXmlDeserializer>();
 
             _dict = new()
             {
