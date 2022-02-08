@@ -10,8 +10,13 @@
 {
     <div class="row">
         <div class="col-6">
-                <h6> Please enter the text you want to convert here: </h6>
-                <textarea required rows="17" cols="50" name="Text" class="form-control">
+                <h6> 
+                    Please enter the text you want to convert here:
+                    <label>or check me to generate</label>
+                    @Html.CheckBox("IsAuto",true )
+                </h6>
+                <textarea rows="17" cols="50" name="Text" class="form-control">
+                    @ViewData["input"]
                 </textarea>
 
         </div>
@@ -25,7 +30,7 @@
 
     <div class="row my-3">
         <div class="col-4 text-center">
-            <select required name="InputFormat" class="form-control" asp-items="Html.GetEnumSelectList<TextConvertorNuget.Format>()">
+            <select required name="InputFormat" class="form-control" asp-items="Html.GetEnumSelectList<TextConverterLibrary.Format>()">
                 
             </select>
         </div>
@@ -33,7 +38,7 @@
             <input type="submit" value="Convert" class="btn btn-primary" />
         </div>
         <div class="col-4 text-center">
-            <select required name="OutputFormat" class="form-control" asp-items="Html.GetEnumSelectList<TextConvertorNuget.Format>()">
+            <select required name="OutputFormat" class="form-control" asp-items="Html.GetEnumSelectList<TextConverterLibrary.Format>()">
             </select>
         </div>
     </div>

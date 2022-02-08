@@ -49,6 +49,7 @@ namespace TextConverterLibrary.Recursion
                 lastX = node.X;
                 i++;
             }
+            opens.Reverse();
             foreach (var node in opens)
             {
                 if (res[res.Length - 1] == ',')

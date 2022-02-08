@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TextConverterLibrary\TextConverterLibrary.csproj" />
-    <ProjectReference Include="..\TextConvertorNuget\TextConvertorNuget.csproj" />
+    <ProjectReference Include="..\TextConverterTest\TextConverterTest.csproj" />
   </ItemGroup>
 
 </Project>

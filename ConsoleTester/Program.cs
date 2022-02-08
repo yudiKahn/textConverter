@@ -1,7 +1,5 @@
-﻿using PerformanceCompare;
-using TextConverterLibrary;
+﻿using TextConverterLibrary;
 using Generator;
-using System;
 
 namespace ConsoleTester
 {
@@ -9,27 +7,14 @@ namespace ConsoleTester
     {
         public static void Main()
         {
-            Performance.Compare(() => {
+            ConverterFactory.Method = ConverterFactory.Recursion;
+            var converter = new Converter();
 
-                ConverterFactory.Method = ConverterFactory.Parallel;
-                var converter = new Converter();
+            var json = Generate.Text(Generate.AbstractSyntaxTree<Model>(), Format.JSON);
 
-                var json = Generate.Text(Generate.AbstractSyntaxTree<Model>(), Format.JSON);
-                
-                var xml = converter.Convert(from:Format.JSON, to:Format.XML, input:json);
+            var xml = converter.Convert(from: Format.JSON, to: Format.XML, input: json);
 
-                return "Parrallel json to xml conversion";
-            }, () => {
-
-                ConverterFactory.Method = ConverterFactory.Recursion;
-                var converter = new Converter();
-
-                var json = Generate.Text(Generate.AbstractSyntaxTree<Model>(), Format.JSON);
-
-                var xml = converter.Convert(from: Format.JSON, to: Format.XML, input: json);
-
-                return "Recusion json to xml conversion";
-            }).Print(Console.WriteLine);
+            Console.WriteLine(xml);
         }
     }
 }

@@ -105,3 +105,12 @@ D:\Projects\Text Convertor\TextConverterTest\obj\Debug\net6.0\TextConverterTest.
 D:\Projects\Text Convertor\TextConverterTest\obj\Debug\net6.0\ref\TextConverterTest.dll
 D:\Projects\Text Convertor\TextConverterTest\obj\Debug\net6.0\TextConverterTest.pdb
 D:\Projects\Text Convertor\TextConverterTest\obj\Debug\net6.0\TextConverterTest.genruntimeconfig.cache
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Projects\Text Convertor\TextConverterTest\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

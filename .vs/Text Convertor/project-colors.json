@@ -65,7 +65,12 @@
       "ProjectGuid": "86db866a-869e-406b-babe-c7988dcac8f7",
       "DisplayName": "WebApp",
       "ColorIndex": 11
+    },
+    "c02f5a32-fcca-4983-b285-de880055fdd0": {
+      "ProjectGuid": "c02f5a32-fcca-4983-b285-de880055fdd0",
+      "DisplayName": "TextConverterTest",
+      "ColorIndex": 12
     }
   },
-  "NextColorIndex": 12
+  "NextColorIndex": 13
 }

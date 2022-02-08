@@ -36,6 +36,7 @@ namespace TextConverterLibrary.Recursion
                 lastX = node.X;
                 i++;
             }
+            opens.Reverse();
             for (int i2 = opens.Count - 1; i2 >= 0; i2--)
             {
                 res += $"</{opens[i2].Key}>";

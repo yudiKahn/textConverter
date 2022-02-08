@@ -1,67 +1,115 @@
 ﻿using System.Reflection;
 using TextConverterLibrary;
 using TextConverterLibrary.Parallel;
+using TextConverterLibrary.Service;
 
 namespace Generator
 {
     public class Generate
     {
+        private static Random Random;
+        static Generate()
+        {
+            Random = new Random();
+        }
         public static string Text(IEnumerable<NodeAbstraction> structure, Format format)
         {
             ISerializer serializer = format == Format.XML ? new XmlSerializer() : new JsonSerializer();
             return serializer.Serialize(structure);
         }
 
-        public static IEnumerable<NodeAbstraction> AbstractSyntaxTree<T>() where T  : new()
+        public static IEnumerable<NodeAbstraction> AbstractSyntaxTree<T>(int n = 1) where T : new()
         {
-            Type t = typeof(T);
-            NodeAbstraction parent = new(t.Name, "");
-            parent.ValueType = NodeValueType.obj;
-            parent.PId = "0";
+            List<NodeAbstraction> res = new();
+            var topId = string.Empty;
 
-            List<NodeAbstraction> res = new() { parent};
-            List<(Type, NodeAbstraction) > types = new() { (t,parent) };
-
-            for(int i=0; i<types.Count; i++)
+            for (int time = 0; time < n; time++)
             {
-                foreach (var prop in types[i].Item1.GetProperties())
+                Type t = typeof(T);
+                if (time == 0)
                 {
-                    if (prop.PropertyType.IsPrimitive || prop.PropertyType == typeof(string))
+                    var top = new NodeAbstraction(t.Name + "s", "")
                     {
-                        res.Add(new NodeAbstraction(prop.Name, GetRndValueFromType(prop.PropertyType))
+                        PId = "0",
+                        ValueType = NodeValueType.obj,
+                        X = 0
+                    };
+                    topId = top.Id;
+                    res.Add(top);
+                }
+                NodeAbstraction parent = new(t.Name+(time + 1), "");
+                parent.ValueType = NodeValueType.obj;
+                parent.PId = topId;
+                parent.X = 1;
+
+                res.Add(parent);
+                List<(Type, NodeAbstraction)> types = new() { (t, parent) };
+
+                for (int i = 0; i < types.Count; i++)
+                {
+                    var currType = GetValueTypeFromType(types[i].Item1);
+                    if (currType == NodeValueType.obj)
+                    {
+                        foreach (var prop in types[i].Item1.GetProperties())
                         {
-                             PId = types[i].Item2.Id, ValueType = GetValueTypeFromType(prop.PropertyType)
-                        });
-                    } 
+                            var ast = new NodeAbstraction(prop.Name, GetRndValueFromType(prop.PropertyType))
+                            {
+                                PId = types[i].Item2.Id,
+                                ValueType = GetValueTypeFromType(prop.PropertyType),
+                                X = 2
+                            };
+                            res.Add(ast);   
+
+                            if (!prop.PropertyType.IsPrimitive && prop.PropertyType != typeof(string))
+                                types.Add((prop.PropertyType, ast));
+                        }
+                    }
+                    else if (currType == NodeValueType.arr)
+                    {
+                        var arrOfType = types[i].Item1.GetElementType();
+                        var l = Random.Next(1, 16);
+                        var pid = types[i].Item2.Id;
+                        for (int j = 0; j < l; j++)
+                        {
+                            var ast = new NodeAbstraction("key", GetRndValueFromType(arrOfType))
+                            {
+                                PId = pid,
+                                ValueType = GetValueTypeFromType(arrOfType),
+                                X = 2
+                            };
+                            res.Add(ast);
+                        }
+                    }
                 }
             }
+
             return res;
         }
-        private static NodeValueType GetValueTypeFromType(Type type)
+        private static NodeValueType GetValueTypeFromType(Type type) 
         {
             if (type == typeof(bool)) return NodeValueType.bol;
             else if (type == typeof(string)) return NodeValueType.str;
             else if (type == typeof(int)) return NodeValueType.num;
+            else if (type == typeof(char)) return NodeValueType.str;
             else if (type.IsArray) return NodeValueType.arr;
             else return NodeValueType.obj;
         }
         private static object GetRndValueFromType(Type type)
         {
-            var rnd = new Random();
             if(type == typeof(bool))
-                return new bool[] { true, false }[rnd.Next(0, 2)].ToString().ToLower();
+                return new bool[] { true, false }[Random.Next(0, 2)].ToString().ToLower();
             else if(type == typeof(int))
-                return rnd.Next(0, int.MaxValue);
+                return Random.Next(0, 20);
             else if(type == typeof(string))
             {
-                int lngthOfTxt = rnd.Next(2, 10);
+                int lngthOfTxt = Random.Next(2, 10);
                 string res = "";
                 for (int i = 0; i < lngthOfTxt; i++)
-                    res += (char)rnd.Next('a', 'z');
+                    res += (char)Random.Next('a', 'z');
                 return res;
             }
             else if(type == typeof(char))
-                return (char)rnd.Next(char.MinValue, char.MaxValue);
+                return (char)Random.Next('a', 'z');
             return "null";
         }
     }

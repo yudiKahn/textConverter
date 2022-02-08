@@ -4,6 +4,7 @@ namespace PerformanceCompare
 {
     public static class Performance
     {
+        public static int N { get; set; } = 100;
         public static IEnumerable<Info> Compare(params Action[] actions)
         {
             List<Info> infos = new List<Info>();
@@ -15,11 +16,12 @@ namespace PerformanceCompare
                 {
                     var ts = new Stopwatch();
                     ts.Start();
-                    action();
+                    for(var i = 0; i < N; i++)
+                        action();
                     ts.Stop();
                     infos.Add(new Info(
                         name: $"Method {method}",
-                        time: ts.ElapsedMilliseconds.ToString()));
+                        time: (ts.ElapsedMilliseconds/N).ToString()));
                 }
                 catch
                 {
@@ -43,15 +45,16 @@ namespace PerformanceCompare
                 {
                     var ts = new Stopwatch();
                     ts.Start();
-                    funcName = func();
+                    for(var i = 0; i < N; i++)
+                        funcName = func();
                     ts.Stop();
                     infos.Add(new Info(
                         name: $"Method {funcName}",
-                        time: ts.ElapsedMilliseconds.ToString()));
+                        time: (ts.ElapsedMilliseconds / N).ToString()));
                 }
-                catch
+                catch(Exception ex)
                 {
-                    infos.Add(new Info($"Method {funcName} crashed", "0"));
+                    infos.Add(new Info($"Method {funcName} crashed. {ex.Message}", "0"));
                 }
             }
             return infos.ToArray();

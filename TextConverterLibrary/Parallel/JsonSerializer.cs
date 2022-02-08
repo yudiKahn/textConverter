@@ -49,12 +49,17 @@ namespace TextConverterLibrary.Parallel
                 lastX = node.X;
                 i++;
             }
+            //?
+            opens.Reverse();
+
             foreach (var node in opens)
             {
                 if (res[res.Length - 1] == ',')
                     res = res.Substring(0, res.Length - 1);
                 res += node.ValueType == NodeValueType.arr ? "]" : "}";
             }
+            if (res[res.Length - 1] == ',')
+                res = res.Substring(0, res.Length - 1);
             return res+'}';
         }
     }
